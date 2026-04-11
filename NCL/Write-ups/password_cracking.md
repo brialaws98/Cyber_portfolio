@@ -1,11 +1,19 @@
 # Challenge #1:
-Name: 
+***Name***: Hashed(Easy)
+* Use the passwords to create hashes
 ### Tools used
 * [hash Generator](https://www.md5hashgenerator.com/) ~ Creates MD5 and SHA1 hashes
 * [SHA 256 Generator](https://tools.keycdn.com/sha256-online-generator) ~ Generates SHA256 passwords
-### Key Takeaway
+### Solutions
+1. Create an MD5 hash [hashbrown7496]: ```7f2a940f6b568dd72328d8883afa1050```
+2. Create a SHA1 hase [50vegetables390]: ```6c3d313b938819a226b8d1de584c331e14fd9ea7```
+3. Create a SHA256 [Rz8W-fishhash-8587]: ```864fdea512c0ab76524e448ec77497385fb402dfee9b2eff1dee10a057b84389```
 # Challenge #2
-Name:
+Name: Best64(Easy)
+* 
 ### Tools used
 * [CrackStation](https://crackstation.net/) ~ Crack Passwords
-### Key Takeaway
+### Solutions
+1. 450e9c430404f61ac92127cec8de897a : ```1socce```
+2. e2447bdb94009dd63de89796dc93d5ab : ```Reddog1```
+3. 1de5c967b45b9ad642de61ba3eb68d80 : ```yuliana```
