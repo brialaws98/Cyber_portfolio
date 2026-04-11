@@ -38,7 +38,7 @@
    * ```"^"]*```(Grabs characters until it hits the closing quote)
    * ```cut -d'"' -f#```(Splices the column while setting the **delimiter** at a certain **field**)
    * ```sort -u```(Sorts by unique item)
-   * ```wc -l(count lines)}
+   * ```wc -l```(count lines)}
 ### Solutions
 1. What was the first EC2 action performed in these logs?: ```DiscribeInstances```
 2. How many unique users are in these logs?: ```5```
