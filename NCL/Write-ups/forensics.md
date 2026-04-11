@@ -26,3 +26,4 @@
 2. The total size, in bytes, of the original binary?: ```18752```
 3. The total size, in bytes, of the modified binary?: ```97869```
 4. The file extension of the hidden file(Modified binary)?: ```jpeg```
+
