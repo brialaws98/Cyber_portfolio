@@ -1,5 +1,5 @@
 # Challenge #1
-***Name***: MCC
+***Name***: MCC (Easy)
 * Downloaded a MCC.csv log to analyze
 * A Bank needs some questions answered related to transactions
 ### Commands {diagnosis of command}
@@ -25,3 +25,21 @@
 3. Which MCC appeared in the log the most?: ```3023 #Appears 5 times in the log```
 4. The total amount spent at Doctors or Physicians(8011)? : ```198.26```
 5. The total number of transactions that were above $50? : ```504```
+
+# Challenge #2
+***Name***: Cloudy, with a Trail of Logs (Medium)
+* The company Cirrus Solutions maintains a detailed activity logs or theircomputer resource
+* Liber8thion is suspected of probing those resources
+* Need to trace events
+### Commands {diagnosis of command}
+1. I have to look at the log to identify the answer.
+2. grep -o '"userName": "[^"]*' cloudtrail.json | cut -d'"' -f4 | sort -u | wc -l<br>
+      {
+   * ```grep```(Standard tool for searching text)
+   * ```"^"]*```(Grabs characters until it hits the closing quote)
+   * ```cut -d'"' -f#```(Splices the column while setting the **delimiter** at a certain **field**)
+   * ```sort -u```(Sorts by unique item)
+   * ```wc -l(count lines)}
+### Solutions
+1. What was the first EC2 action performed in these logs?: ```DiscribeInstances```
+2. How many unique users are in these logs?: ```5```
