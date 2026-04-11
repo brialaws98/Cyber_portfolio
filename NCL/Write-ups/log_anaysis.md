@@ -39,6 +39,14 @@
    * ```cut -d'"' -f#```(Splices the column while setting the **delimiter** at a certain **field**)
    * ```sort -u```(Sorts by unique item)
    * ```wc -l```(count lines)}
+4. ```grep -o 'i-[0-9a-f]\{8,17\}' cloudtrail.json | sort | uniq -c | sort -nr | head``` <br>
+      {
+      * ```-o```("Only Matching")
+      * ```i-```(Look for strings starting with EC2 instance prefex)
+      * ```[0-9a-f]```(Looks for hexadecimal characters)
+      * ```\{8,17}```(Looks for IDs between 8 and 17 characters long)}
+6. 
 ### Solutions
-1. What was the first EC2 action performed in these logs?: ```DiscribeInstances```
-2. How many unique users are in these logs?: ```5```
+1. The first EC2 action performed in these logs?: ```DiscribeInstances```
+2. Unique users are in these logs?: ```5```
+4. Which instance ID appears most frequently?: ```i-fe1d6063```
