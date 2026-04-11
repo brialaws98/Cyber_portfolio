@@ -13,4 +13,9 @@
 3.  By entering the Base-16 code into a text box, I was able to get the phrase ```You are the hairball that splatters into your plans!```
 4.  I recognied that the code was Base-64 because of the (=) at the end. By using CyberChef, I was able to get the phrase ```They call me Dr. Reginald Bushroot. This is my partner K.R.```
 
-# Challenge # 2:
+# Challenge # 2
+### Tools Used
+* [Pigpen](https://rumkin.com/tools/cipher/pigpen/) ~ Used to translate Pigpen
+
+### Steps taken {solutions}
+1. ```Pigen Cipher```
