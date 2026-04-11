@@ -13,8 +13,7 @@
     * ```-F```(Field separator: tells you how to split the fields)
     * ```sort```(Group identical items together)
     * ```uniq -c```(Count how many times and item appears)
-    * ```sort -nr```(sort items by numeric highest value)
-      }
+    * ```sort -nr```(sort items by numeric highest value)}
 4. ```cat mcc.csv | grep "8011"```<br>
       {I Added the amount spent from mcc 8011}
 5. ```cat mcc.csv | awk -F ',' '$4 > 50 {print $4}' | wc -l```<br>
