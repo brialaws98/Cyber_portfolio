@@ -45,8 +45,20 @@
       * ```i-```(Look for strings starting with EC2 instance prefex)
       * ```[0-9a-f]```(Looks for hexadecimal characters)
       * ```\{8,17}```(Looks for IDs between 8 and 17 characters long)}
-6. 
+5. ```grep -B 50 '"eventName": "TerminateInstances"' cloudtrail.json | grep -o '"userName": "[^"]*' | cut -d'"' -f4 | sort | uniq -c | sort -nr | head -n 1``` <br>
+      {
+   * ```-B[number] "[search_item]"```(Grabs user information above the the action)
+     }
+6. ```grep -E "userName|sourceIPAddress" cloudtrail.json | paste - - | sort | uniq | cut -d'"' -f8 | sort |uniq -d```<br>
+      {
+      * ```-E```(Finds every line that matches the item)
+      * ```uniq -d```(Only prints lines that appear more than once)}
+7. ```grep -B 15 '"mfaAuthenticated": "false"' cloudtrail.json | grep '"userName":' | sort -u``` <br>
+       {Find the User to answer the question}
 ### Solutions
 1. The first EC2 action performed in these logs?: ```DiscribeInstances```
 2. Unique users are in these logs?: ```5```
 4. Which instance ID appears most frequently?: ```i-fe1d6063```
+5. Which user terminated the most EC2 instances?: ```Mateo```
+6. IP address that was used by more than one user?: ```198.51.100.88```
+7. User that does not have MFA enabled for all sessions?: ```Arnav```
