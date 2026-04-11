@@ -3,11 +3,11 @@
 * Liber8tion spun up new services
 * Explore the DNS records
 ### Commands
-1. ```dig @resolver lige8.cityinthe.cloud NS```
-2. ```dig @resolver liber8.cityinthe.cloud SOA```
-3. ```dig @resolver liber8.cityinthe.cloud CAA```
-4. ```dig @resolver -x 10.0.0.20```
-5. ```dig @resolver _minecraft._tcp.liber8.cityinthe.cloud SRV```
+1. ```dig @resolver lige8.cityinthe.cloud NS``` {Scan for FQDN of the authoratative name server}
+2. ```dig @resolver liber8.cityinthe.cloud SOA``` {Scan for the Start Of Authority serial number}
+3. ```dig @resolver liber8.cityinthe.cloud CAA``` {Scan for the domain name for the Certificate Authority}
+4. ```dig @resolver -x 10.0.0.20``` {Scan for full hostname IP address}
+5. ```dig @resolver _minecraft._tcp.liber8.cityinthe.cloud SRV``` {Scan for server running the minecraft server}
 
 ### Solutions
 1. The FQDN of the authoritative name server is under the ***Answer Section***: ```ns1.liber8.cityinthe.cloud```
