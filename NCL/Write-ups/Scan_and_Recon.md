@@ -15,3 +15,18 @@
 3. The domain name of the ***Certificate Authority*** that is allowed to issue TLS certificates is ```\letsencrypt.org'''
 4. The full hostname (FQDN) that maps to the IP address is ```web.liber8.cityinthe.cloud```
 5. The full hostname(FQDN) of the server running microsoft server is ```mc2.liber8.cityinthe.cloud```
+
+# Challenge #2
+***Name:*** Scandiego (Medium)
+### Tool(s) Used
+* [Nmap](https://www.kali.org/tools/nmap/) ~ Used for network discovery, security auditing, and inventorying devices
+
+### Command {Function/description}
+1. ```nmap -sC -sV manager```
+   {
+   * ```-sC```
+   * ```-sV```
+   }
+### Solutions
+1. The language is set to use(*language_region.encoding*)?: ```en_AU.UTF-8```
+2. The city it claims to be running in? ```Sydney```
