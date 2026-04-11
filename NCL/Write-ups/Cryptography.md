@@ -19,3 +19,15 @@
 
 ### Steps taken {solutions}
 1. ```Pigen Cipher```
+   
+# Challenge #4
+***Name:***Million Dollar Cat(Medium)
+* One of the financers is a fan of cats and has left some hidden information
+### Tools Used
+* [google.com](https://www.google.com/?zx=1775918777357) ~ Used to search for information
+  
+### Solutions
+1. The precise standard RTTY speed for amateur radio, in baud?: ```45.45```
+2. The name commonly (but incorrectly) used for the International Telegraph Alphabet No 2?: ```Baudot```
+3. The stop bit in an International Telegraph Alphabet No. 2 (ITA2) transmission?: ```1```
+4. The audio modulation method typically used? ```Audio Frequency Shift Keying (AFSK)``` 
