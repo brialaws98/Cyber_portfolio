@@ -10,7 +10,7 @@
 3. Create a SHA256 [Rz8W-fishhash-8587]: ```864fdea512c0ab76524e448ec77497385fb402dfee9b2eff1dee10a057b84389```
 # Challenge #2
 Name: Best64(Easy)
-* 
+* Database was discovered with potential crackable passwords
 ### Tools used
 * [CrackStation](https://crackstation.net/) ~ Crack Passwords
 ### Solutions
