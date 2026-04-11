@@ -26,4 +26,13 @@
 2. The total size, in bytes, of the original binary?: ```18752```
 3. The total size, in bytes, of the modified binary?: ```97869```
 4. The file extension of the hidden file(Modified binary)?: ```jpeg```
+### What I am stuck on and steps that I have taken so far (And possible refelction)
+* Q5 is tricky
+* Below is the steps that I took and what I was able to accomplish:
+     1. When I used the ```binwalk modified_binary``` command, I was able to discover the hidden JPEG file
+     2. Had to use the ```binwalk --dd=".*" modified_binary``` command to export the hidden file
+     3. I discovered the ***_modified_binary.extracted*** file and use ```cd``` to enter that dierctory
+     4. Once inside that directory, I was able to view the files with the ```ls``` command and discovered 3 different files
+     5. Renamed the ***4940*** with ```mv 4940 hidden_file``` command
+     6. The hidden file contains a message on an image "No flag here?....Or is there?" 
 
