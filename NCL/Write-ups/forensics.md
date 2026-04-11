@@ -34,5 +34,5 @@
      3. I discovered the ***_modified_binary.extracted*** file and use ```cd``` to enter that dierctory
      4. Once inside that directory, I was able to view the files with the ```ls``` command and discovered 3 different files
      5. Renamed the ***4940*** with ```mv 4940 hidden_file``` command
-     6. The hidden file contains a message on an image "No flag here?....Or is there?" 
+     6. The hidden file contains a message on an image "No flag here?....Or is there?"
 
