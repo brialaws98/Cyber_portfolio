@@ -24,7 +24,7 @@
 3. Which MCC appeared in the log the most?: ```3023 #Appears 5 times in the log```
 4. The total amount spent at Doctors or Physicians(8011)? : ```198.26```
 5. The total number of transactions that were above $50? : ```504```
-
+#
 # Challenge #2
 ***Name***: Cloudy, with a Trail of Logs (Medium)
 * The company Cirrus Solutions maintains a detailed activity logs or theircomputer resource
@@ -39,25 +39,31 @@
    * ```cut -d'"' -f#```(Splices the column while setting the **delimiter** at a certain **field**)
    * ```sort -u```(Sorts by unique item)
    * ```wc -l```(count lines)}
-4. ```grep -o 'i-[0-9a-f]\{8,17\}' cloudtrail.json | sort | uniq -c | sort -nr | head``` <br>
+3.
+```
+$ grep "eventTime" cloudtrail.json | head -n 1      # Get the first event
+$ grep "eventTime" cloudtrail.json | tail -n 1      # Get the last event 
+```
+5. ```grep -o 'i-[0-9a-f]\{8,17\}' cloudtrail.json | sort | uniq -c | sort -nr | head``` <br>
       {
       * ```-o```("Only Matching")
       * ```i-```(Look for strings starting with EC2 instance prefex)
       * ```[0-9a-f]```(Looks for hexadecimal characters)
       * ```\{8,17}```(Looks for IDs between 8 and 17 characters long)}
-5. ```grep -B 50 '"eventName": "TerminateInstances"' cloudtrail.json | grep -o '"userName": "[^"]*' | cut -d'"' -f4 | sort | uniq -c | sort -nr | head -n 1``` <br>
+6. ```grep -B 50 '"eventName": "TerminateInstances"' cloudtrail.json | grep -o '"userName": "[^"]*' | cut -d'"' -f4 | sort | uniq -c | sort -nr | head -n 1``` <br>
       {
    * ```-B[number] "[search_item]"```(Grabs user information above the the action)
      }
-6. ```grep -E "userName|sourceIPAddress" cloudtrail.json | paste - - | sort | uniq | cut -d'"' -f8 | sort |uniq -d```<br>
+7. ```grep -E "userName|sourceIPAddress" cloudtrail.json | paste - - | sort | uniq | cut -d'"' -f8 | sort |uniq -d```<br>
       {
       * ```-E```(Finds every line that matches the item)
       * ```uniq -d```(Only prints lines that appear more than once)}
-7. ```grep -B 15 '"mfaAuthenticated": "false"' cloudtrail.json | grep '"userName":' | sort -u``` <br>
+8. ```grep -B 15 '"mfaAuthenticated": "false"' cloudtrail.json | grep '"userName":' | sort -u``` <br>
        {Find the User to answer the question}
 ### Solutions
 1. The first EC2 action performed in these logs?: ```DiscribeInstances```
 2. Unique users are in these logs?: ```5```
+3. How many minutes elapsed between the first and last event (rounded to the nearest integer)?: ```341```
 4. Which instance ID appears most frequently?: ```i-fe1d6063```
 5. Which user terminated the most EC2 instances?: ```Mateo```
 6. IP address that was used by more than one user?: ```198.51.100.88```
