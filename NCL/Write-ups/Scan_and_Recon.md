@@ -15,7 +15,7 @@
 3. The domain name of the ***Certificate Authority*** that is allowed to issue TLS certificates is ```\letsencrypt.org'''
 4. The full hostname (FQDN) that maps to the IP address is ```web.liber8.cityinthe.cloud```
 5. The full hostname(FQDN) of the server running microsoft server is ```mc2.liber8.cityinthe.cloud```
-
+#
 # Challenge #2
 ***Name:*** Scandiego (Medium)
 ### Tool(s) Used
@@ -27,6 +27,17 @@
    * ```-sC```
    * ```-sV```
    }
+4. ```nmap -sU --min-rate=1000 -p3000-65535 <target>```{}
+5. ```nmap -sU -p5353 --script=dns-service-discovery <target-ip>```
+{
+* ***Will help to answer questions 5-7***
+}
 ### Solutions
 1. The language is set to use(*language_region.encoding*)?: ```en_AU.UTF-8```
 2. The city it claims to be running in? ```Sydney```
+3. The lowest UDP port that is running?: ```5353```
+4. The ***service*** running on the lowest open UDP port?: ```mdns```
+5. What name does the service group for group of this service advertise on the network: ```Globetrotter```
+6. Two service types that are advertised in the service group? ```ssh, http```
+7. The service is advertising a flag. What is it? ```SKY-VILE-8610```
+#
