@@ -2,6 +2,8 @@
 ***Name***: Dig it up!(Easy)
 * Liber8tion spun up new services
 * Explore the DNS records
+### Tool(s) Used
+* Dig
 ### Commands
 1. ```dig @resolver lige8.cityinthe.cloud NS``` {Scan for FQDN of the authoratative name server}
 2. ```dig @resolver liber8.cityinthe.cloud SOA``` {Scan for the Start Of Authority serial number}
