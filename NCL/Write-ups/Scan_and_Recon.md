@@ -43,3 +43,12 @@
 6. Two service types that are advertised in the service group? ```ssh, http```
 7. The service is advertising a flag. What is it? ```SKY-VILE-8610```
 #
+# Challenge #3
+***Name:*** Verified(Hard)
+* Lier8tion left a server exposed on the public internet
+* Scan and see if you can get access to any of the running services
+### Commands
+1. ```nmap <target>``` {Get availabe service(s)}
+### Solutions
+1. How many open TCP ports are there on the server? ```5```
+2. User that can access the service on the lowest port? ```ftp```
