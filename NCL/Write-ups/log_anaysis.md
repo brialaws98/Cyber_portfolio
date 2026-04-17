@@ -68,3 +68,6 @@ $ grep "eventTime" cloudtrail.json | tail -n 1      # Get the last event
 5. Which user terminated the most EC2 instances?: ```Mateo```
 6. IP address that was used by more than one user?: ```198.51.100.88```
 7. User that does not have MFA enabled for all sessions?: ```Arnav```
+#
+# Challenge #3
+* Had to look for the public IP address to find the first answer
