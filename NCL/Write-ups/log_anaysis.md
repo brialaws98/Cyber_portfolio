@@ -32,7 +32,7 @@
 * Need to trace events
 ### Commands {diagnosis of command}
 1. I have to look at the log to identify the answer.
-2. grep -o '"userName": "[^"]*' cloudtrail.json | cut -d'"' -f4 | sort -u | wc -l<br>
+2. ```grep -o '"userName": "[^"]*' cloudtrail.json | cut -d'"' -f4 | sort -u | wc -l```<br>
       {
    * ```grep```(Standard tool for searching text)
    * ```"^"]*```(Grabs characters until it hits the closing quote)
