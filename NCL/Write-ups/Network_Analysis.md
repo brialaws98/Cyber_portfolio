@@ -2,7 +2,7 @@
 * Have raw Hex data
 * Can TCPDump or ***Python***
        * import into python
-  * Place the code into wireshark and analyze the file
+  * Place the code into ***wireshark*** and analyze the file
 #
 # Challenge #2
 ***Name:*** Compressed Analysis(Medium)
