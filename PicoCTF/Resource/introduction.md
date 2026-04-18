@@ -5,3 +5,7 @@
 * [Forensics](https://picoctf.org/learning_guides/Book-3-Web-Exploitation.pdf) ~ Who framed Roger Rab-it
 * [Binary Exploitation](https://picoctf.org/learning_guides/Book-5-Binary-Exploitation.pdf) ~ Exploiting information at a register level
 * [Reverse Engineering](https://picoctf.org/learning_guides/Book-6-Reversing.pdf) ~ Time to get with the program
+#
+# External Links
+* [Cybersecurity Guide](https://cybersecurityguide.org/)
+* [CTF Hadbook](https://ctf101.org/)
