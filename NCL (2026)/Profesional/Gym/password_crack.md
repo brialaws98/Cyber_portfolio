@@ -12,3 +12,18 @@
 3. 32e5f63b189b78dccf0b97ac41f0d228 : ```joybird1```
 4. 2233287f476ba63323e60addca1f6b64 : ```kirkles```
 5. 6539bbb84fe2de2628fc5e4f2a31f23a : ```ddmack```
+#
+# Challenge #2
+***Name:*** Mask (Medium)
+### Steps taken
+1. Edited the ```hash.txt```
+2. Entered ```hashcat -m 0 -a 3 ./hash.txt 'SKY-HQNT-?d?d?d?d'```
+   * ```-m 0```: Uses hash-mode ```0``` - indicates the hashes are MD5 hashes
+   * ```-a 3```: Indicates a brute-force/mask attack
+   * ```'SKY-HQNT-?d?d?d?d```: ```hashcat``` should attempt passwords with a different digit in place of each ```?d```
+### Solution
+1. 71b816fe0b7b763d889ecc227eab400a : ```SKY-HQNT-8765```
+2. 674291170dffcf620bda2a604a6820ea : ```SKY-HQNT-7659```
+3. 06f03267f31077d2c4b5c728472070ae : ```SKY-HQNT-6598```
+4. d866f4b3b34b598375149fb7661113ab : ```SKY-HQNT-5981```
+5. d9053951a8d1c15254b46ec9fc974a6b :```SKY-HQNT-9816```
