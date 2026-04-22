@@ -6,6 +6,10 @@
 3. Enter the ```find``` command to find the directory for ```rockyou.txt```
 4. Found where the rockyou.txt was located
 5. Entered ```hashcat -m 0 -a 0 hash.txt ~/rockyou.txt``` to discover the hashes
+   * ```hash.txt``` : the file location + file name that has the hashes ```hashcat``` will try to crack
+   * ```-m 0``` : uses hash-mode 0 — indicates the hashes are MD5 hashes
+   * ```-a 0``` : use a dictionary attack (this requires a wordlist to be specified)
+   * ```/usr/share/wordlists/rockyou.txt``` : the file location +name of the wordlist
 ### Solution
 1. 68a96446a5afb4ab69a2d15091771e39 : ```emilybffl```
 2. ec5f0b1826389df8622133014e88afde : ```ryjd1982```
