@@ -1,4 +1,7 @@
 # Dig (Easy)
+### Useful links
+* [Cloudflare "What is DNS](https://www.cloudflare.com/learning/dns/what-is-dns/)
+* [Cloudflare "DNS records"](https://www.cloudflare.com/learning/dns/dns-records/)
 ### Questions
 1. What is te IPv4 address for ``fortaigan.net``? : ``104.231.72.5`` <br>
    [Used the ```dig @resolver A *** ``` to find the IPv4 address]
@@ -23,6 +26,15 @@
    [Use the ``dig @resolver SRV ***``` to find information about the service]
 8. What is the IPv4 address of the machine that's running the SIP service? :  ``103.231.74.3`` <br>
    [Use the hostname that was found usig the ``_sip._tcp`` to find the IPv4 address of the machine running the SIP service ``dig @resolver ***``]
+
+### Lessons Learned
+* SIP service
+     * ***SIP (Session Initiation Protocol)*** handles the signaling part of voice, video and other messaging sessions that are needed
+     * Has ability to route calls using domain names
+     * devices may need help locating the correct servers
+     * published usign specific service labels that have particular formatting
+     * ```_sip._tcp``` can be used to find information about the service
+     * After finding the hostname using ```_sip._tcp``` you can use the hostname fo then find the IPv4 address
 # NMAP (Easy)
 
 # Git (Easy)
