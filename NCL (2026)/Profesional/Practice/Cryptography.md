@@ -1,1 +1,12 @@
-
+# Number Bases (Easy)
+# Shift (Easy)
+# @bash (Easy)
+# Beep (Easy)
+# Fencing (Medium)
+# French (Medium)
+# RSA (Hard)
+# Strings (Easy)
+# Stego 1 (Easy)
+# Stego 2 (Medium)
+# Stego 3 (Hard)
+# Stego 4 (Hard)
