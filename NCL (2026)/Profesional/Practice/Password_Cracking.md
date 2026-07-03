@@ -1,1 +1,7 @@
-
+# Rockyou (Easy)
+# Pokemon (Medium)
+# Windows (Medium)
+# Mask (Medium)
+# PDF Cracking (Medium)
+# Law & Order (Hard)
+# Kali Linux (Hard)
