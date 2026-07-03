@@ -36,6 +36,22 @@
      * ```_sip._tcp``` can be used to find information about the service
      * After finding the hostname using ```_sip._tcp``` you can use the hostname fo then find the IPv4 address
 # NMAP (Easy)
+### Useful Links
+* [Nmap Manual](https://nmap.org/book/man-port-specification.html)
+* [List of TCP and UDP port numbers](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
+### Questions
+1. What is the lowest open TCP port on the system ``ports.cityinthe.cloud``? : ``7``
+2. what is the second open TCP port on the system? ``13``
+3. What is the third lowest open TCP port on the system? ``37``
+4. What is the lowest open UDP port onn the system? ``nginx``   
+### Lessons Learned
+* Use ```nmap -Pn -p 1-500 ***``` to look for open TCP ports within a specific range
+   * ``Pn`` ~ Treat all hosts as online
+   * ``-p`` ~ Specify port range
+*  Use ``nmap -sU -p 1-10 ****`` to scan for UDP ports
+   * ``-sU`` ~ Specify UDP port scans
+   * 
+* ``-sV`` ~ Determines software versions 
 
 # Git (Easy)
 
