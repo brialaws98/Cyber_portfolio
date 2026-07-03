@@ -1,1 +1,8 @@
-
+# SSH (Easy)
+# Login (Easy)
+# VSFTPD (Easy)
+# History (Medium)
+# Nginx (Medium)
+# Squid (Hard)
+# Payments (Hard)
+# Custom File Format (Hard)
