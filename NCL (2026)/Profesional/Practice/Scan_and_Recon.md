@@ -1,1 +1,5 @@
-
+# Dig (Easy)
+# NMAP (Easy)
+# Git (Easy)
+# Net Track (Medium)
+# Metadata (Hard)
