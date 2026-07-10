@@ -29,7 +29,25 @@ An emplloyee's computers was compromised.Now we need to find out what informatio
 3. What software was used to redact hte file and insert a watermark? : ```pdftron```
 4. What is the flag? ```SKY-PDRD-2390```
 
-# File Carving (Medium
+# File Carving (Medium)
+The security team found a strange file exiting the network. Help identify what's in the file.
+### Tools
+* Downloaded a file
+* [Computer Fundamentals for Cybersecurity](https://trove.cyberskyline.com/ff55c18374c84109b32b95252309185d)
+* The [mv](https://www.geeksforgeeks.org/linux-unix/mv-command-linux-examples/) command to change a file name
+* The [binwalk](https://linuxcommandlibrary.com/man/binwalk) command to find additional hidden files
+### Questions
+1. This file initially look like something green, what's the file format of this green file? : ```png``` <br>
+[Use the ```file --fileName--``` to view general information about the file]
+2. How many files can be extracted from the binary blob? ```6``` <br>
+[There are 6 files within the original png file. This is seen using the ```biwalk command]
+3. What is the hidden flag in the file? : ```SKY-RWCI-4291``` <br>
+[
+* Use ```--extract``` to get additional information
+* Change directory to the extractedd file
+* Use ```cat``` command in to view the flag
+]
+   
 # Magic Bytes (Medium)
 # Doctor (Medium)
 # The Book (Hard)
