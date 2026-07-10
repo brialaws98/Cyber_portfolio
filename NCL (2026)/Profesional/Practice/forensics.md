@@ -36,6 +36,7 @@ The security team found a strange file exiting the network. Help identify what's
 * [Computer Fundamentals for Cybersecurity](https://trove.cyberskyline.com/ff55c18374c84109b32b95252309185d)
 * The [mv](https://www.geeksforgeeks.org/linux-unix/mv-command-linux-examples/) command to change a file name
 * The [binwalk](https://linuxcommandlibrary.com/man/binwalk) command to find additional hidden files
+* [tar archive](https://en.wikipedia.org/wiki/Tar_(computing))
 ### Questions
 1. This file initially look like something green, what's the file format of this green file? : ```png``` <br>
 [Use the ```file --fileName--``` to view general information about the file]
