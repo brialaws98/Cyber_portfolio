@@ -26,6 +26,30 @@
   * ``dig @resolver fortaigan.net`` ~ Used the email that I discovered to find the IP address given to the SIP service
 
 # Nmap (Easy)
+###### Test your understanding of port scanning by scanning ``ports.cityinthe.cloud``.
+### Tools used
+* [Lists of TCP and UDP ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
+* [Port specification and scan order](https://nmap.org/book/man-port-specification.html)
+### Steps taken
+* I want to find the 3 lowest TCP port on the system
+  * ``nmap -Pn -p 1-500 ports.cityinthe.cloud`` <br>
+    * ```-Pn`` ~ Treats all hosts as online --skip host discovery
+    * ``-p <port ranges>`` ~ Only scan specific ports
+* Scanning UDP ports can be challenging because UDP does not requires a response
+  * Nmap will move on the scanning subsequent ports after the request times out
+  * Scanning can take some time
+* I just want to find the 10 lowest UDP ports
+  * ``nmap -sU -p 1-10 ports.cityinthe.cloud`` ~ The open port is unfiltered
+    *  ``-sU`` ~ UDP scan
+    * ***Open|   |*** <br>
+      - *Network behavior:* The target host responds with a UDP payload (DNS response or SNMP reply)
+      - *What it means:* The port is unfiltered and an application actively replied
+    * ***Open|Filtered*** <br>
+      - *Network behavior:* Nmap receives no response at all (no packet returned, no ICMP error)
+      - *What it means:* Nmap cannot tell the difference between an open port ignoring empty probes and a firewall dropping packets(``FILTERED``)
+* I want to find more specific information about the service
+  * ``nmap -sV -p 16080 ports.cityinthe.cloud``
+    * ``-sV`` ~ Probe open ports to determine service version info
 
 # Git (Easy)
 
