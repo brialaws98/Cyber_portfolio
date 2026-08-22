@@ -52,6 +52,30 @@
     * ``-sV`` ~ Probe open ports to determine service version info
 
 # Git (Easy)
+###### Analyze a git project and find some hidden flags.
+### Tools used 
+* [Git basics](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+### Steps taken
+###### Accessing the Repository Through CLI
+* Can install by issuing the command ``git clone [git repository url``
+  * Will create a new directory in the current working directory with the same name as the repository name
+  * From there, you can change into that directory to navigate around and inspect the files and revision history
+    * ``git log`` ~ Show a history log of all the commits (changes) made on the current branch
+    * ``git log [branch name]`` ~ Show a history log of all the commits on the target branch
+    * ``git show [commit hash]`` ~ Show the diff (specific addition/deletions) in that commit. The command hash is shown in the ``git log`` command.
+    * ``git branch`` ~ Shows the different working branches (used to logically separate different works in progress)
+    * ``git checkout [branch name]`` ~ Switch to a different branch
+###### Accessing the Repository Through the Browser (Web)
+* The provided git repo URL is in the form of ``git@[hostname]:[username]/[repository name].git``
+  * ``hostname`` of the server hosting a copy of the git repo
+  * ``username``of the user that owns the repository
+  * ``repository name`` is the beginning of the repo
+ ###### Solution
+ * I cloned the git repo that I wantedd using ``git clone https://gitlab.com/cybergit4823/my-awesome-flag-project``
+ * By running the ``git log`` command I was able to find the:
+   * Name of the author of this git
+   * The short commit hash (first 8 characters) of the initial commit
+* By running the ``cat ,file>`` command, I am able to view the flags in each commit and branch
 
 # Net Track (Medium)
 
