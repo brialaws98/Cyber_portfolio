@@ -2,7 +2,7 @@
 ###### Tasked to help the newly launched company,Fortaigan, audit its DNS records. To complete these tasks, I will be using a terminal to find information.
 ### Tools used
 * [What is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
-* [DNS records]](https://www.cloudflare.com/learning/dns/dns-records/)
+* [DNS records](https://www.cloudflare.com/learning/dns/dns-records/)
 ### Steps taken 
 * I want to find the IP address for ``fortaigan.net``
   * ``dig @resolver A fortaigan.net`` ~ Used to ***find the IP address*** of the device with the *resolver* hostname
@@ -55,4 +55,4 @@
 
 # Net Track (Medium)
 
-# Metadata (Hard)``
+# Metadata (Hard)
