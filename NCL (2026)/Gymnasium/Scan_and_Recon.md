@@ -78,5 +78,24 @@
 * By running the ``cat ,file>`` command, I am able to view the flags in each commit and branch
 
 # Net Track (Medium)
+###### Can you interact with the strange server (``net-track.services.cityinthe.cloud:8090``) and see what information you can extract?
+#### Tools used
+* [Understanding an Nmap fingerprint](https://nmap.org/book/osdetect-fingerprint-format.html)
+* [Byte Counter](https://charactercounter.com/byte-counter)
+#### Steps taken and solution
+###### Taking a look at Nmap
+* If you start this server using Nmap, you may identify what appears to be some strange behavior
+  * ```nmap [hostname] -p [port number]``` ~ Will show one open port
+  * ```nmap [hostname] -p [port number]``` ~ Will show the same server as closed
+* Nmap sends a SYN packet and receives a SYN-ACK back
+  * This makes the port open
+* ``--reason`` ~ Display the reason a port is in a particular state
+###### Now lets see what Netcat (``nc``) can do
+* ```nc [hostname] [port number]``` ~ This command line tool can be used to connect to the port
+  * typing ``help`` will show you a list of supported commands
+  * ``version`` ` Will communicate the name and version of the software running
+  * ``list`` ~ Used to get directory listing in the filenames
+  * ``get [filename]`` ~ Displays information in each file
+* I want to get the character count of the file s to see which one is the largest.
 
 # Metadata (Hard)
