@@ -99,3 +99,11 @@
 * I want to get the character count of the file s to see which one is the largest.
 
 # Metadata (Hard)
+###### We found what appears to be a server on ``metadata.services.cityinthe.cloud:1338`` displaying Metadata about a cloud service. Can you find out more information?
+### Tools Used
+* [Access instance Metadata for an EC2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html)
+* [What is an Amazon EC2?](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+* [AIM Lookup](https://amilookup.com/) ~ Used to search information on the ``am-id``
+### Steps taken and Solutions
+* I used the ```curl [URL]``` to find the information
+  * Followed certain paths to find important information (``http://[hostname]:[port]/[endpoint]``)
