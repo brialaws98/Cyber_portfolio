@@ -1,1 +1,11 @@
-
+# Top 10 Exploited Vulnerabilities
+## ZeroLogon (CVE-2020-1472)
+## Log4Shell (CVE-2021-44228)
+## ICMAD (CVE-2022-22536)
+## ProxyLogon (CVE-2021-26855)
+## Spring4Shell (CVE-2022-22965)
+## Atlassian Confluence RCE (CVE 2022-26134)
+## VMware vSphere (CVE-2021-21972)
+## Google Chrome Zero-Day (CVE-2022-0609)
+## Follina (CVS-2022-30190)
+## PetitPotam (CVE-2021-36942)
