@@ -16,6 +16,28 @@
     * The IP address for the "welcome" subdomain is ```1.1.1.1```
 
 # FTP Traffic (Easy)
+###### We found some interesting traffic, analyze the packet capture to identify what was transferred.
+### Tools used
+* [Computer Networking](https://trove.cyberskyline.com/computer-fundamentals-for-cybersecurity/networking)
+* [Learn more about File Transfer Protocol (FTP)](https://en.wikipedia.org/wiki/File_Transfer_Protocol)
+### Steps taken and solution
+* I wanted to find the first ```Username:Password``` that was attempted
+  * On the first packet, navigate "Follow => TCP Stream" option to look at the information
+    * Found the first username and password that was used
+    * Discovered the FTP server that is running
+    * Discovered the successful login attempt
+* Applied a filter in the search bar ```ftp.response.code == 230```, a code for successful logon
+  * Discovered the first command that was executed
+  * They deleted a file (```DELE```)
+  * And then uploaded a new file (```STOR```)
+* Applied ```ftp-data``` to the search bar to look for
+  * In packet 17, in the "info" section, it shows a "LIST" command in the parentheses
+    * Following the TCP Stream, I see the contents of the directory from when the command was run
+   * In packet 25, there is a "STOR" command in the parentheses
+     * ```STOR``` ~ uploads the file and stores it on the FTP server
+  * Packet 65 shows another listing of the current directory after the file was uploaded
+    * Discovered the file size (in byte) of the uploaded file
+    * Discovered the file that was downloaded by the anonymous user
 
 # HTTP (Easy)
 
