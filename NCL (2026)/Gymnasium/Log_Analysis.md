@@ -66,6 +66,48 @@
      8. Sort by frequency (```sort -n```)
 
 # VSFTPD (Easy)
+###### Analyze the VSFTPD log file that we obtained
+### Introduction
+* ***VSFTPD***(*Very Secure FTP Daemon*) is used on Linux servers to create a secure way to users to upload and download files
+* This server is implemented for different purposes
+  * The logs created form its use convey similar information like:
+    1. Timestamps
+    2. process IDs (PID)
+    3. Event types
+    4. Client IP addresses
+    5. Usernames
+* ```awk``` has additional capabilities involving formatting and conditional logic
+### Questions
+1. What IP address did "ftpuser" first log in from? : ```10.0.0.123```
+   * ```cat vsftpd.log | grep ftpuser | head```
+     1. Search for the first entry that include "ftpuser" (```grep```)
+2. What is the first directory that ftpuser created? : ```TreeSizeFree```
+   * ```cat vsftpd.log | grep ftpuser| grep -i mkdir | head```
+3. What is the last directory that ftpuser created? : ```110D300S```
+   * Same command as the question #2 but changed head to tail
+4. What file extension was the most used by ftpuser? : ```jpg```
+   * ```cat vsftpd.log | grep ftpuser | grep 'OK UPLOAD' | awk -F ',' '{print $2 }' | awk -F "." '{print $#}' | sort | uniq -c | sort```
+     1. Search for successful file upload (```grep```)
+     2. Extract the file extension for those uploads (```awk -F ',' '{print $2}' | awk -F "." {print $2}'```)
+     3. Get frequency count for each unique file extension
+5. What is the username of the other user in this log? : ```jimmy```
+   * ```cat vsftpd.log | awk '{print $#}' | sort | uniq```
+6. What IP address did this other user log in from? : ```10.0.0.214```
+   * ```cat vsftpd.log | grep jimmy```
+     1. Search for any entries that include jimmy
+7. How many total bytes did this other user upload? : ```105750628```
+   * ```cat vsftpd.log | grep jimmy | grep 'OK UPLOAD' | awk -F ',' '{print  $3 }' | awk '{s+=$1} END {print s}'```
+     1. Search for successful file upload entries from jimmy
+     2. Extract the number of bytes transferred (```awk -F ',' {print $3}'```)
+     3. Sum the bytes (```awk s+=$1} END {print s}```)
+8. How many total bytes did ftpuser upload? : ```13980839165```
+   * Same as question #7 but replaced *jimmy* with *ftpuser*
+9. How many total bytes did ftpuser download? ```6008032```
+    * Same as question #7 but changed *UPLOAD* to *DOWNLOAD* for ftpuser
+10. Identify the IP address of the suspicious login (the login with no subsequent activity) : ```10.3.0.6```
+    * ```cat vsftpd.log | grep 'OK LOGIN' | awk -F '"' '{print $2 }' | sort | uniq```
+      1. Go through each IP address to look for suspicious activity
+
 
 # Nginx (Medium)
 
