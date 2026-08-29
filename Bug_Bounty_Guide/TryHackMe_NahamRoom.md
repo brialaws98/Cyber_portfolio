@@ -1,4 +1,6 @@
 # Recon
+###### Using a combination of subdomain, emuneration, brute force, content discovery and fuzzing find all the subdomains you can.
+
 
 # XSS
 
