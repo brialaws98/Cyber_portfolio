@@ -8,7 +8,7 @@
 * The message field will often include warnings or errors
 * The event details field will include when sessions initiate or authentications attempts      
 ###### Questions
-1. Find the hostname of the ssh server that was compromised.
+1. Find the hostname of the ssh server that was compromised
    * ```cat [filenames] | head``` ~ Used to find the first few lines of the log
 2. Find the IP addresses that attacked the server
    *```cat auth.log | grep Failed | head``` ~ Grab the first few servers with "Failed" attempts
@@ -35,12 +35,35 @@
 * The ```-c``` flag will show the number of times an entry occurs in the output
 * The ```-n``` flag will sort a list numerically 
 ###### Questions
-1. How many total attempts were made in this log?
-2. How many unique usernames appear in this log?
-3.  What is the username with the most login attempts
-4.  How many attempts were made for the username with the most login attempts?
-5.  What is the date with the most login attempts?
-6.  What is the username that had logins from the most unique IP addresses?
+1. How many total attempts were made in this log? : ```6063```
+   * ```cat [filenames] | wc -l``` ~ Get the line count of the log
+2. How many unique usernames appear in this log? : ```1679```
+   * ```cat [filename] | cut -f # | sort | uniq | wc -l```
+     1. Extract the third field (with the usernames) of the log (``cut -f 3``)
+     2. Sort the usernames (``sort``)
+     3. Get a line count of the number of unique usernames (``uniq | wc -l``)
+3.  What is the username with the most login attempts : ```ntory```
+   * ```cat [filenames] | cut -f# | sort | unique -c | sort -n```
+     1. Extract the third field (with the usernames) of the log (```cut -f 3```)
+     2. Sort the usernames (```sort```)
+     3. Get a frequency count of each unique username (```uniq -c```)
+     4. Sort the unique usernames by frequency (```sort -n```)
+4.  How many attempts were made for the username with the most login attempts? : ```124```
+5.  What is the date with the most login attempts? : ```2011-03-23```
+   * ```cat [filenames] | cut -f # | cut -d " " -f # | sort | uniq -c | sort -n```
+     1. Extract the first field (with the date+time) of the log (```cut -f 1```)
+     2. Extract just the date (```-d " "```)
+     3. Get a frequency count of each unique date (```uniq -c```)
+     4. Sort the unique date by frequency (```sort -n```)
+6.  What is the username that had logins from the most unique IP addresses : ```wlfla0190```
+   * ```cat [filenames] | cut -f #, #| sort | uniq | cut -f # | sort | uniq -c | sort -n```
+     1. Extract the second field (with the IP address) and third field (with the username) of the log (```cut -f 2,3```)
+     2. Sort the IP/username pairs (```sort```)
+     4. Get the unique IP/username pairs (```uniq```)
+     5. Extract just the usernames from each pair (```cut -f 2```)
+     6. Sort the usernames (```sort```)
+     7. Get a frequency count of how many unique pairs each username has (```uniq -c```)
+     8. Sort by frequency (```sort -n```)
 
 # VSFTPD (Easy)
 
