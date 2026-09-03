@@ -142,13 +142,24 @@
      3. Sort in descending numeric order (``sort -rn``)
 9. What is the second most common HTTP used? : ``CONNECT``
     * Same command from question #8
-15. How many requests were for \x04\x01\x00P\xC6\xCE\x0Eu0\x00? : ``6``
+10. How many requests were for \x04\x01\x00P\xC6\xCE\x0Eu0\x00? : ``6``
     * ```cat access.log | grep '\\x04\\x01\\x00P\\xC6\\xCE\\x0Eu0\\x00' | wc -l```
       1. Search log for all lines that contain the sequence of all characters
       2. Get a line count
       * The command requires two backslashes for each original backslash to perform a proper escape sequence for the backslach
 
 # History (Medium)
+###### Analyze Firefox SQLite history and find out what happened
+### Tools used
+* [SQL tutorial](https://www.tutorialrepublic.com/sql-tutorial/) ~ Learn more about SQL
+### Questions
+1. What did the user search for on craigslist?
+2. What was the current price of Bitcoin when the user was browsing?
+3. What Bitcoin exchange did the user log in to?
+4. What is the email that was used to log into the exchange?
+5. What was the ID of the Bitcoin transaction that the user looked at?
+6. What was the BTC of all the inputs of the Bitcoin transaction?
+7. Which Bitcoin address received the majority of the Bitcoin in the transaction?
 
 # Squid (Hard)
 
