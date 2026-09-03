@@ -108,8 +108,45 @@
     * ```cat vsftpd.log | grep 'OK LOGIN' | awk -F '"' '{print $2 }' | sort | uniq```
       1. Go through each IP address to look for suspicious activity
 
-
 # Nginx (Medium)
+###### Analyze a Nginx log to see what happened.
+### Questions
+1. How many different IP addresses reached the server? : ``47``
+   * ```cat [filenames] | cut -d " " -f 1 | sort | unique | wc -l```
+     1. The ``"`` can be used as a delimiter with ``cut``
+2. How many requests yielded 200 status? : ``19''
+   * ```cat access.log | cut -d '"' -f 3 | cut -d ' ' -f 2 | sort | uniq -c | sort -rn```
+     1. Extract the third field (with the IP address) (```cut -d ' ' -f 2```)
+     2. Sort the IP addresses and get the unique values with a count of the occurrences of each IP address (```sort | unique -c```)
+     3. Sort in descending numeric order (```sort -rn```)
+3. How many request yielded a 400 status? : ''38''
+   * Same steps taken in question #2  
+4. What IP address rang at the doorbell? : ``186.64.69.141``
+   * cat [filenames] | grep "bell"
+     1. Search the log for any lines that contain "bell"
+5. What version of Google visited the website? : ``2.1``
+   * ```cat [filenames] | grep "Googlebot"```
+     1. Search the log for any lines that contain "Googlebot"
+6. Which IP address attempted to exploit the shell shock vulnerability? : ``61.161.130.241``
+    * ```cat [filenames] | grep '() { :; };'```
+      1. After researching [Shellshock vulnerability](https://blog.qualys.com/vulnerabilities-threat-research/2014/09/24/bash-remote-code-execution-vulnerability-cve-2014-6271), I was able to discover that to find it that is a a sequence of characters that can be entered (```() { ;-:; };```   
+7. What was the most popular version of Firefox used for browsing the website? : ```Firefox/31.0```
+    * ```cat access.log | egrep -o "Firefox/.*" | sort | uniq -c```
+      1. Search log for all lines that contain "Firefox" and the following characters that make up the version number (``egrep -o "Firefox/*"``)
+         * The ``-o`` flag will print only the matched (non-empty) parts of a matching line
+      2. Sort thos values and get a unique count (``sort | uniq -c```)
+8. What is the most common HTTP method used? : ```GET```
+   * ```cat access.log | awk -F " " '{print $6}' | sort | uniq -c | sort -rn```
+     1. Extract the 6th field (with the HTTP method) (```awk -F " " '{print $6}'```)
+     2. Sort and get the unique values with a count of the occurrences of each value (``sort | unique -c``)
+     3. Sort in descending numeric order (``sort -rn``)
+9. What is the second most common HTTP used? : ``CONNECT``
+    * Same command from question #8
+15. How many requests were for \x04\x01\x00P\xC6\xCE\x0Eu0\x00? : ``6``
+    * ```cat access.log | grep '\\x04\\x01\\x00P\\xC6\\xCE\\x0Eu0\\x00' | wc -l```
+      1. Search log for all lines that contain the sequence of all characters
+      2. Get a line count
+      * The command requires two backslashes for each original backslash to perform a proper escape sequence for the backslach
 
 # History (Medium)
 
