@@ -1,4 +1,5 @@
 # Top 10 Overview
+[OWASP top 10 2025](https://owasp.org/Top10/2025/)
 ##  A01:2025 - Broken Access Control
 ## A02:2025 - Security Misconfiguration
 ## A03:2025 - Software Supply Chain Failures
