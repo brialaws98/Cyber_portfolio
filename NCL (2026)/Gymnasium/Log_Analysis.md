@@ -152,14 +152,30 @@
 ###### Analyze Firefox SQLite history and find out what happened
 ### Tools used
 * [SQL tutorial](https://www.tutorialrepublic.com/sql-tutorial/) ~ Learn more about SQL
+* [SQLite Viewer](https://inloop.github.io/sqlite-viewer/)
+  * Used ```ssudo apt install sqlite3``` to install to linux
+* [Places.sqlite info](https://kb.mozillazine.org/Places.sqlite)
 ### Questions
-1. What did the user search for on craigslist?
-2. What was the current price of Bitcoin when the user was browsing?
-3. What Bitcoin exchange did the user log in to?
-4. What is the email that was used to log into the exchange?
-5. What was the ID of the Bitcoin transaction that the user looked at?
-6. What was the BTC of all the inputs of the Bitcoin transaction?
-7. Which Bitcoin address received the majority of the Bitcoin in the transaction?
+1. What did the user search for on craigslist? : ```bitcoin```
+   * Can look up it up in the URL section (```select url from moz_places;```)
+   * Select the URL link
+2. What was the current price of Bitcoin when the user was browsing? : ```239.50```\
+   * Searched for the table that gave this information (```select * from moz_places where title like '%$%';```)
+   * The ```$``` sign will find the price
+3. What Bitcoin exchange did the user log in to? : ```coinbase```
+   * Entered ```select url from moz_places;``` to look for the URL
+   * Search for where the user signs in
+4. What is the email that was used to log into the exchange? : ```b1gbird@gmail.com```
+   * Entered ```select * from moz_places where title like '%gmail%';``` to search for Gmail records
+   * Looked for the entry with the login information
+5. What was the ID of the Bitcoin transaction that the user looked at? : ```5274cfba585a4b5681527a37f95c76340428916bb7480cef6c545f0a28dcd2d7```
+   * Entered ```select url from moz_places;
+   * Searched for the transaction ID that the user looked at
+6. What was the BTC of all the inputs of the Bitcoin transaction? : ```0.22616302```
+   * Clicked on the URL where the transaction was searched and was given a webpage for the information
+   * This will help find answer for this and the next question
+7. Which Bitcoin address received the majority of the Bitcoin in the transaction? :```
+18z6bTFjxkXCmhfp8YBetR2wgmoVjXGJZz```
 
 # Squid (Hard)
 
