@@ -41,6 +41,43 @@ https://example.com/app/admin_getappInfo
     * Can be executed from the command line 
 
 ## A02:2025 - Security Misconfiguration
+### Desccription
+* ***Insecure Defaults & Features:*** Default accounts/passwords remain unchanged, and unnecessary ports, services, pages, or privileges are left enabled
+* ***Lack of System Hardening:*** Security settings accross servers, frameworks, and cloud permissions are not properly configured or updated to secure values
+* ***Excessive Information Exposure:*** Improper error handling exposes detailed stack traces and system information to end users
+* ***Legacy & Compatibility Risks:*** Security features are disabled during upgrades, or backward compatibility is prioritized ove safe configuration
+* ***Missing Security Controls:*** Critical security headers/directives are absent, and a repeatable configuration Hardening process is lacking
+
+### How to prevent
+Secure installation processes should be implemented, including:
+* A repeatable hardening process enabling the fast and easy deployment of another environment that is appropriately locked down. Development, QA, and production environments should all be configured identically, with different credentials used in each environment.
+* This process should be automated to minimize the effort required to set up a new secure environment.
+* A minimal platform without any unnecessary features, components, documentation, or samples. Remove or do not install unused features and frameworks.
+* A task to review and update the configurations appropriate to all security notes, updates, and patches as part of the patch management process (see A03 Software Supply Chain Failures). Review cloud storage permissions (e.g., S3 bucket permissions).
+* A segmented application architecture provides effective and secure separation between components or tenants, with segmentation, containerization, or cloud security groups (ACLs).
+* Sending security directives to clients, e.g., Security Headers.
+* An automated process to verify the effectiveness of the configurations and settings in all environments.
+* Proactively add a central configuration to intercept excessive error messages as a backup.
+* If these verifications are not automated, they should be manually verified annually at a minimum.
+* Use identity federation, short-lived credentials, or role-based access mechanisms provided by the underlying platform instead of embedding static keys or secrets in code, configuration files, or pipelines
+
+### Example attack scenarios
+###### Scenario #1:
+* The application server comes with sample applications not removed from the production server
+* These sample applications have known security flaws that attackers use to compromise the server
+* Suppose one of these applications is the admin console, and default accounts weren't changed
+  * The attacker logs in with the default password and takes over
+###### Scenario #2:
+* Directory listing is not disabled on the server
+* An attacker discovers they can simply list directories
+* The attacker finds and downloads the compiled Java classes, which they decompile and reverse engineer to view the code
+* The attacker then finds a severe access control flaw in the application
+###### Scenario #3:
+* The application serves' configuration allows detailed error messages, such as stack traces to return to users
+* This potentially exposes sensitive information or underlying flaws
+###### Scenario #4:
+* A cloud service provider (CSP) Defaults to having sharing permissions open to the internet
+* This allows sensitive data stored within cloud storage to be accessed
 
 ## A03:2025 - Software Supply Chain Failures
 
