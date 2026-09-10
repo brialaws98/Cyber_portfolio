@@ -179,15 +179,38 @@
 
 # Squid (Hard)
 ###### Ananlyze the Squid proxy log to see what happened
+### Tools used
+* [Epoch % Unix timestamp conversion tools](https://www.epochconverter.com/https://www.epochconverter.com/)
+* [Squid Web Cache Wiki](https://wiki.squid-cache.org/Features/LogFormat)
+* [AWK command in Linux](https://www.geeksforgeeks.org/linux-unix/awk-command-unixlinux-examples/)
 ### Questions
-1. In what year was this log saved?
-2. How many milliseconds did the fastest request take?
-3. How many milliseconds did the longest request take?
-4. How many different IP addresses did the proxy service in this log?
-5. How many GET requests were made?
-6. How many POST requests were made?
-7. What company created the antivirus used on the host at 192.168.0.224?
-8. What URL is used to download an antivirus?
+1. In what year was this log saved? : ```2010```
+   * cat squid_access.log | head -n 1
+     1.  Used ``head -n 1``` to get the first log
+    * ```date -d @1286536308.779```
+      1. Used ``-d`` flag to *display time described by a STRING*
+2. How many milliseconds did the fastest request take? : ```5```
+   * ```cat squid_access.log | awk '{print $2}' | sort -n```
+     1.  Looked for the first millisecond that was logged 
+3. How many milliseconds did the longest request take? : ```41762```
+   * Same command as question #2,but looked for the very last millisecond logged
+4. How many different IP addresses did the proxy service in this log? : ```4```
+   * ```cat squid_access.log | awk '{print $3}' | sort | uniq | wc -l```
+     1. Extracted the third field (IP address of the proxy client) (```awk '{print #3}'```)
+     2. Sorted and got unique values (```sort | uniq```)
+     3. Got the line count (```wc -l```)
+5. How many GET requests were made? : ```35```
+    * ```cat squid_access.log | awk '{print $6}' | sort | uniq -c```
+      1. Extract the 6th field (HTTP Request type) (```awk '{print $6}'```)
+      2. Sort and get the unique values with a count of their occurrences (```sort | unique -c```) 
+6. How many POST requests were made? : ```78```
+   * Same command from question #5
+7. What company created the antivirus used on the host at 192.168.0.224? : ```symantecliveupdate```
+    * ```cat squid_access.log | grep "192.168.0.224"```
+      1. The name of the comapany is Found within the URLs of the requests made the IP address
+8. What URL is used to download an antivirus? : ```http://liveupdate.symantecliveupdate.com/streaming/norton$202009$20streaming$20virus$20definitions_1.0_symalllanguages_livetri.zip```
+   * Same command from question #7
+   * Found the URL that includes "virus" and "definitions"
 
 # Payments (Hard)
 
