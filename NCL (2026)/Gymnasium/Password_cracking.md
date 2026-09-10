@@ -15,6 +15,10 @@
      * ```-z```: Decomposs using ``gzip``
      * ```-f```: Specify the filenames of the archive
 * I ended up using a website called ***crack station*** to decode the passwords
+* If I used the ```hashcat [filenames] -m 0 -a 0 rockyou.txt```, these are what the flags mean
+  1. ```-m 0```: Use hash mode ``0`` - indicates the hashes are MD5 hashes
+  2. ```-a 0```: Use a dictionary attack (this requires a wordlist to be specified)
+  3. ```rockyou.txt```: The file location+name of the wordlist
 ### Questions 
 1. 68a96446a5afb4ab69a2d15091771e39 : ```emilybffl```
 2. ec5f0b1826389df8622133014e88afde : ```ryjd1982```
