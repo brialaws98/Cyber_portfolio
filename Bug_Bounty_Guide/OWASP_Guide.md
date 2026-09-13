@@ -80,6 +80,60 @@ Secure installation processes should be implemented, including:
 * This allows sensitive data stored within cloud storage to be accessed
 
 ## A03:2025 - Software Supply Chain Failures
+### Description
+* ***Definition:*** Occur when third-party code, dependencies, or build tools introduces security vulnerabilities or malicious code into your system
+* ***Unmonitored Dependencies:*** You are at risk if you fail to track, audit =, or regularly scan every direct and nested component, library, and framework across your tech stack
+* ***Weak Access & Controls:*** Risk increases significantly when systems lack least-privilege access, separation of duties, or mandatory multi-person oversight for code promotion
+*  ***Outdated Components & Slow Patching:*** Relying on unpatched, out-of-date, or unsupported components - or delaying fixes due to slow change - control schedules - leaves system paths
+*  ***Pipeline & Configuration Flaws:*** Insecure configurations, using untrusted sources, or running a CI/CD pipeline with weaker security then the production environment creates Easy exploitation paths
+
+### How to prevent
+* There should be a patch management in place to:
+  * ***Maintain a Complete Inventory:*** Continuously generate and track a Software Bill of Materials (SBOM) that covers both direct and nested (transitive) dependencies for all client-and-server-side components
+  * ***Automate Vulnerability Monitoring:*** Use automated tools to scan dependencies continuously and monitor databases like CVE, NVD, and [OSV](https://osv.dev/) for real-time security alerts
+  * ***Reduce Attack Surface & Sourced Risks:*** Pull packages exclusively from trusted, signed sources over secure links, and strip out unused dependencies, unnecessary features, or unneeded files
+  * ***Manage Updates & Dependencies Intentionally:*** Choose dependency versions deliberately, updated developer tooling regularly, and plan migrations or virtual patches for unmaintained, unpatchable components
+  * ***Minimize Deployment Blast Radius:*** Deploy software updates using staged or canary rollouts rather than updating all systems at once to limit impact if a vendor is compromised
+* There should be a change management process or tracking system in place to track changes to:
+  * CI/CD settings (all build tools and pipelines)
+  * Code repositories
+  * Sandbox areas
+  * Developer IDEs
+  * SBOM tooling, and created artifacts
+  * Logging systems and logs
+  * Third-party integrations, such as SaaS
+  * Artifact repositories
+  * Container registries
+* Harden the following systems, which includes enabling MFA and locking down IAM:
+  * Your code repository (which includes not checking in secrets. protecting branches, backups)
+  * Developer workstations ( regular patching, MFA, Monitoring, and more)
+  * Your build server & CI/CD (separation of duties, access control, signed builds, environment-scoped secrets, tampered-evident logs, more)
+  * Your artifacts (ensure integrity via provenance, signing, and time stamping, promote artifacts rather then rebuilding for each environment, ensure builds are immutable)
+  * Infrastructure as codes (managed like all code, including use of PRs and version control)
+* Every organization must ensure an ongoing plan for monitoring, triaging, and applying updates or configuration changes for the lifetime of the application or portfolio
+### Example attack scenarios
+###### Secnario #1:
+* A trusted vendor is compromised with malware, leading to your computer systems being compromised when you upgrade
+  * The most famous example of this is probably:
+    * [The 2019 SolarWinds compromise that led to ~ 18,000 organizations being compromised](https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack)
+###### Scenario #2: 
+* A trusted vendor is compromised such that it behaves maliciously only under a specific confidition
+  * The 2025 Bybit theft of $1.5 billion was created by [a supply chain in wallet software](https://www.sygnia.co/blog/sygnia-investigation-bybit-hack/) that only executed when the target wallet was being used
+###### Scenario #3:
+* The [```Shai-Hulud``` supply chain attack](https://www.cisa.gov/news-events/alerts/2025/09/23/widespread-supply-chain-compromise-impacting-npm-ecosystem) in 20025 was the first successful self-prpagating npm worm
+* Attacks seeded malicious versions of poular packages, which used a post-install script to harvest and exfiltrate sensitive data to public Github repositories
+* The malware would detect Nmap tokens in the victim environment, and automatically use them to push malicious versions of any accessible package
+* The worm reached over 500 package versions before being distributed by npm
+* This supply chain attack was advanced, fast-spreading, and damaging, and targeting developer machines it demonstrated developer themselves are now prime targets for supply chain attacks
+###### Scenario #4:
+* Components typically run with the  same privileges as the application itself
+  * This means that flaws in any component can result in serious inpact
+* Such flaws can be accidental (e.g., coding error) or intentional (e.g., a backdoor in a component)
+* Some example exploitable component vulnerabilities discovered are:
+  * CVE 2017-5638 ~ a Struts 2 remote code execution vulnerability that enables the execution of arbitrary code on the server
+    * Has been blamed for significant breaches
+  * CVE 2021-44228 ("Log4Shell) ~ an Apache Log4j remote code execution zero-day vulnerability
+    * Has been blamed for ransomware, cryptomining, and other attack campaigns
 
 ## A04:2025 - Cryptographic Failure
 
