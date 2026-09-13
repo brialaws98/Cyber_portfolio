@@ -136,6 +136,9 @@ Secure installation processes should be implemented, including:
     * Has been blamed for ransomware, cryptomining, and other attack campaigns
 
 ## A04:2025 - Cryptographic Failure
+## Desciption
+## How to prevent
+## Example attack scenarios
 
 ## A05:2025 - Injection
 
