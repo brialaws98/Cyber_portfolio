@@ -288,10 +288,40 @@ Runtime.getRunTime().exec(cmd);
     2. Logging out happens only to the current system
 * If an attacker uses the same browser after the victim thinks they have successfully logged out, but with the user still authenticated to some of the applications, then can access the vitim's account
   * Same issue can happen in offices and enterprises when a sensitive application has not been properly exited and a colleague has (temporary) access to the unlocked computer
-### References
-* [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
-* [OWASP Secure Codign Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/01-introduction/05-introduction)
+
 ## A08:2025 - Software or Data Integrity Failures
+### Description
+* ***Core Definition:*** These failures happen when software or infrastructure trusts invalid, unverified, or malicious code and data
+* ***Untrusted Sources:*** Using unverified plugins, libraries, modules, or CDNs allows malicious code to enter your application
+* ***Insecure CI/CD Pipelines:*** Pulling  code or artifacts without verifying their digital signatures or source integrity exposes pipelines to unauthorized access and compromise
+* ***Unverified Auto-Updates:*** Distributing automatic application updates without strict integrity checks lets attackers deploy malicious patches directly to users
+* ***Insecure Deserialization:*** Exposing encoded or serialized objects allow attackers to tamper with data structure and manipulate app execution
+### How to prevent 
+* ***Verify source integrity:*** Use digital signatures to confirm code and data originate from trusted sources and haven't been tampered with
+* ***Control dependencies:*** Pull libraries only from vetted, trusted repositories, or host an internal trusted mirror if risk is high
+* ***Require change reviews:*** Implement through peer reviews for all code and configuration update to block malicious code
+* ***Secure the CI/CD pipeline:*** Restrict access, enforce strict controls, and maintain proper segregation across build and deployment systems
+* ***Validate incoming data:*** Protect serialized data from untrusted clients by enforcing encryption, signatures, or integrity checks before processing
+### Examples
+###### Scenario #1: *Inclusion of Web Functionality from an Untrusted Source*
+* A company uses an external service to provide support functionality
+  * It has a DNS mapping for ``myCompany.SupportProvider.com`` to ``support.myCompany.com``
+  * All cookies, including authentication cookies, set on the ``myCompany.com`` domain will now be sent to the support provider
+* Anyone with access to the support provider's infestructure can steal the cookies of all your users that have visited ``support.myCompanny.com`` and perform a session hijacking attack
+###### Scenario #2: *Update without signing*
+* Many home routers, set-top boxes, device firmware, and others do not verify updates via signed firmware
+* Unsigned firmware is a growing target for attackers and is expected to get worse
+  * Major concern because many times there is no mechanism to remediate other than to fix in a future version and wait for previous versions to age out
+###### Scenario #3: *Use of Package from an Untrusted Source*
+* A developer has trouble finding the updated version of a package they are looking for, so they download it not from the regular, trusted package manager, but from a website online
+* The package is not signed
+  * There is no opportunity to ensure integrity
+* Package includes malicious code
+###### Scenario #4: *Insecure Deserialization*
+* A React application calls a set of Spring Boot microservices
+* Being functional programmers, they tried to ensure that their code is immutable
+* The solution they came up with is serializing the user state and passing it back and fourth with each request
+* An attacker notices the "rO0" Java object signature (in base64) and use the [Java Deserialization Scanner](https://github.com/federicodotta/Java-Deserialization-Scanner) to gain code execution on the application server
 
 ## A09:2025 - Security Logging and Alerting Failures
 
