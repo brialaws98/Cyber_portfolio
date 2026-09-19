@@ -252,11 +252,45 @@ Runtime.getRunTime().exec(cmd);
 * ###### Scenario #3:
   * A retail chain's e-commerce website does not have protection against bots run by scrapers buying high-end video cards to resell on auction websites
     * This creates terrible publicity for the video card makers and retail chain owners, and enduring bad blood with enthusiasts who cannot obtain these cards at any price
- * Careful anti-bot design and domain logic rules might identify inauthentic purchases and reject such transactions
+   * Careful anti-bot design and domain logic rules might identify inauthentic purchases and reject such transactions
    * *Example:* purchases made within a few seconds of availability
 
 ## A07:2025 - Authentication Failures
-
+### Description
+* ***Definition:*** Authentication weaknesses allow attackers to trick a system into recognizing an invalid or unauthorized user as legitimate
+* ***Weak Passwords & Storage:*** Risk arises when systems allow weak/default passwords, permit already-breached credentials, or store password data insecurely (like plain text or weak hashes)
+* ***Automated & Brute-Force Attacks:*** Systems are vulnerable if they fail to block credentials stuffing, password spraying, or rapid brute-force login attempts
+* ***MFA Flaws & Poor Recovery:*** Failing to enforce storing multi-factor authentication, allowing weak fallbacks, or Relying on insecure password recovery exposes accounts
+* ***Insecure Sessions Management:*** Leaking session IDs in URLs, reusing IDs post-login, or failing to properly invalidate token/sessions upon logout leaves user access exposed
+### How to prevent
+* ***Enforce MFA & Password Managers:*** Require multi-factor authentication to stop credential attacks and encourage password managers so users can generate strong, unique passwords
+* ***Block Weak & Breached Credentials:*** Disable default passwords, check new passwords against [common lists](https://haveibeenpwned.com/), and validate them against known breach
+* ***Follow NIST Guidelines & Stop Forced Resets:*** Align length and complex policies with [NIST (800-63b's guidelines in section 5.1.1)](https://pages.nist.gov/800-63-3/sp800-63b.html#:~:text=5.1.1%20Memorized%20Secrets) standards, and never force periodic password rotation unless a breach is suspected
+* ***Harden Authentication Endpoints:*** Prevent account enumeration with generic error messages ("Invalid username or password"), rate-limit failed logins, and log potential attacks
+* ***Use Secure Session Management:*** Rely on established identity providers or secure, built-in session managers that issue high-entropy session IDs stored safely in cookies
+### Example attack scenarios
+###### Scenario #1:
+* Credential stuffing, the use of lists of known username and password combinations, is now a very common attack
+* More recently attackers have been found to 'increment' or otherwise adjust passwords, based on common human behavior
+  * Making slight changes to a password
+* Adjusting of password attempts is called a hybrid credential stuffing attack or password spray attack
+  * Can be even more effective than the traditional version
+* If an application can be used as a password oracle to determine if the credentials are valid and gain unauthorized access
+###### Scenario #2:
+* Most successful authentication attacks occur due to the continued use of passwords as the sole authentication factor
+* Once considered best practices, password rotation and complexity requirements encourage users to both reuse passwords and use weak passwords
+* Organizations are recommended to stop these practices per NSIT 800-63 and enforce use of multi-factor authentication on all important systems
+###### Scenario #3:
+* Applications session timeouts aren't implemented correctly
+  * A user uses a public computer to access an application and instead of selecting "logout". the user simply closes the browser tab and walks away
+  * If a [Single Sign on (SSO)](https://www.cloudflare.com/learning/access-management/what-is-sso/) session can not be closed by a [Single Logout (SLO)](https://fusionauth.io/blog/single-sign-on-vs-single-log-out)
+    1. A single login logs you into your, for example, your mail reader, your document system, and your chat system
+    2. Logging out happens only to the current system
+* If an attacker uses the same browser after the victim thinks they have successfully logged out, but with the user still authenticated to some of the applications, then can access the vitim's account
+  * Same issue can happen in offices and enterprises when a sensitive application has not been properly exited and a colleague has (temporary) access to the unlocked computer
+### References
+* [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+* [OWASP Secure Codign Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/01-introduction/05-introduction)
 ## A08:2025 - Software or Data Integrity Failures
 
 ## A09:2025 - Security Logging and Alerting Failures
