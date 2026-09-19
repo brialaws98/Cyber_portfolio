@@ -136,6 +136,7 @@ Secure installation processes should be implemented, including:
     * Has been blamed for ransomware, cryptomining, and other attack campaigns
 
 ## A04:2025 - Cryptographic Failure
+* [LLM01:2025 Prompt Injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) is an [OWASP LLM Top 10](https://genai.owasp.org/llm-top-10/) 
 ### Description
 * ***Universal Transport Encryption:*** All data in transit should be encrypted at [OSI Layer 4](https://en.wikipedia.org/wiki/Transport_layer), made easier today by hardware-accelerated CPUs and automated certificate management like [LetsEncrypt](https://letsencrypt.org/)
    * ***Sensitive Data Protection:*** High value data -such as password, health records, credit cards, and trade secrets- requires additional encryption at rest and the [application layer](https://en.wikipedia.org/wiki/Application_layer) (OSI Layer 7), especially to meet compliance standards like GDPR (General Data Protection Regulation) or PCI DSS (PCI Data Security Standard)
@@ -188,8 +189,30 @@ Secure installation processes should be implemented, including:
      1. This is a common issue in report-writing software
 ### Example attack scenarios
 ### Scenario #1:
+* An application uses untrusted data in the construction of the following vulnerable SQL call:
+  ```
+  String query  = "SELECT * FROM accounts WHERE custID='" + request.getParameter("I'd") + "'";
+  ```
+* An attacker modifies the 'id' parameter value in their browser to send: ``' OR '1'='1``. For example:
+```
+http://example.com/app/accountView?I'd='OR '1'='1
+```
+* This changes the meaning of the query to return all records from the account table. More dangerous attacks could modify or delete data or even invoke stored procedures
 ### Scenario #2:
+* An application's blind trust in frameworks may result in queries that are still vulnerable. For example, Hibernate Query Language (HQL):
+```
+Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
+```
+*  An attacker supplies: ``'OR custID IS NOT NULL OR custID='``
+  * This bypasses the filter and returns all accounts
+  * While HQL has fewer dangerous functions than raw SQL, it still allows unauthorized data access when user input is concatenated into queries
 ### Scenario #3:
+* An application passes user input directly to an OS command:
+```
+String cmd = "nslookup " + request.getParameter("domain");
+Runtime.getRunTime().exec(cmd);
+```
+* An attacker supplies ``example.com; cat  /etc/passwd`` to execute arcitrary commands on the server
 
 ## A06:2025 - Insecure Design
 
