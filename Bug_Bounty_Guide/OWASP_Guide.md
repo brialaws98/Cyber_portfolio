@@ -215,6 +215,45 @@ Runtime.getRunTime().exec(cmd);
 * An attacker supplies ``example.com; cat  /etc/passwd`` to execute arcitrary commands on the server
 
 ## A06:2025 - Insecure Design
+### Description
+* ***Definition:*** Refers to missing, inadequate, or ineffective security controls planned into the system architecture
+* ***Designed vs. Implementation:*** Design flaws happen in the blueprint stage, while implementation defects occur when writing code -a secure design can still contain coding bugs
+* ***Flawed Foundations:*** A perfect, bug-free implementation cannot fix an insecure design, because the necessary defenses were never built into the plan
+* ***Not the Root Cause:*** Insecure design is a distinct category of risk and is not the underlying source of every other security vulnerability
+* ***Risk Profiling Required:*** Skipping business risk Profiling during development leads to insecure design, as teams fail to identify the specific security controls required
+* Three key parts of having a secure design are:
+  * ###### Gathering Requirements and Resource Management
+    * ***Gather & Negotiate:*** Define business and technical security needs early, fracturing in data protection (CIS/authenticity), tenant isolation, and expected exposure
+    * ***Cover All Bases:*** Document both functional and non-functional security requirements alongside standard feature specifications
+    * ***Budget Entirely:*** Plan and negotiate funding for security activities across all stages: design, build, testing, and ongoing operations
+  * ###### Creating a Secure Design
+    * ***Integrate Threat Modeling:*** Continuously evaluate threats, changes in data flows, and access controls during regular refinement sessions
+    * ***Define Failure Status:*** Map out expected flows and error handling in user stories, documenting validated assumptions and conditions
+    * ***Build Culture Over Tools:*** Treat secure design as an ongoing mindset and methodology rather than a tool or an add-on, using incentives and lessons learned to improve
+  * ###### Having a secure Development Lifecycle
+    * ***Establish Core Practices:*** Adopt a structured development life-cycle using Threat Modeling, paved-road patterns, secure component libraries, and post-mortems
+    * ***Engage Security Early:*** Involve security experts from the start of a project, during build phases, and throughout ongoing maintenance
+    * ***Empower Developers:*** Cultivate developer self-responsibility and security awareness through regular discussions so security informs every design decision
+### How to prevent 
+* ***Secure Lifecycle & Experts:*** Build secure development lifecycle guided by AppSec professionals to evaluate, design, and enforce security and privacy controls
+* ***Pre-Built Security Assets:*** Standardized development using a library of secure design patterns and "paved-road" components
+* ***Threat Modeling & Mindset:*** Apply Threat Modeling to critical application flows (like author  and business logic) and use it to build a team-wide security scenarios
+* ***Architecture & Segregation:*** Implement multi-tier validation checks, separation system/network layers by exposure, and isolate tenants robustly across all tiers
+### Example attack scenarios
+* ###### Scenario #1:
+  * A credential recovery workflow might include "questions and answers"
+    * Is prohibited by NIST 800-63b, the OWASP ASVS, and the OWASP Top 10
+  *  Questions and answers cannot be trusted as evidence of identity, as more than one person can know the answers
+  *  Such functionality should be removed and replaced with a more secure design
+* ###### Scenarion #2:
+  * A cinema chain allows group booking discounts and has maximum of 15 attendees before requiring a deposit
+  * Attackers could treat model this flow and test if they can find an attack vector in the business logic of applications causing a massive loss of income
+    1. *Example:* Booking 600 seats and all cinemas at once in a few requests
+* ###### Scenario #3:
+  * A retail chain's e-commerce website does not have protection against bots run by scrapers buying high-end video cards to resell on auction websites
+    * This creates terrible publicity for the video card makers and retail chain owners, and enduring bad blood with enthusiasts who cannot obtain these cards at any price
+ * Careful anti-bot design and domain logic rules might identify inauthentic purchases and reject such transactions
+   * *Example:* purchases made within a few seconds of availability
 
 ## A07:2025 - Authentication Failures
 
