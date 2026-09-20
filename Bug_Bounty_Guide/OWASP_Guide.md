@@ -324,5 +324,30 @@ Runtime.getRunTime().exec(cmd);
 * An attacker notices the "rO0" Java object signature (in base64) and use the [Java Deserialization Scanner](https://github.com/federicodotta/Java-Deserialization-Scanner) to gain code execution on the application server
 
 ## A09:2025 - Security Logging and Alerting Failures
+### Description
+* ***Inadequate Log Capture & Integrity:*** Critical actions (like failed logins or errors) aren't logged consistently, logs aren't secured against tampering, and local-only logs lack proper backups
+* ***Lack of Continuous Monitoring:*** System, application, and API logs aren't proactively monitored for suspicious behavior or dynamic security scan activities
+* ***Ineffective Alerting & Response:*** Alert thresholds, playbooks, or escalation paths are missing, outdated, or delayed, preventing real-time response to active attacks
+* ***Alert Fatigue & SOC Overload:*** High volumes of false positives hide critical warnings, leading to missed or delayed incident detection
+* ***Data Exposure & Logging Vulnerabilities:*** Unencoded log data exposes systems to injection attacks, while logging sensitive information (like PII/PHI) or exposing log views risks data leaks
+### How to prevent
+* ***Log comprehensive & context-rich security data:*** Record both successful and failed access attempts, security control checks, and validation failures in a standard format, keeping context long enough for forensic analysis while encoding data to prevent log injection attacks
+* ***Protect log and transaction integrity:*** Maintain tamper-proof audit trails for all transactions, and ensure system errors automatically trigger rollbacks that "fail closed"
+* ***Set up intelligent alerting & traps:*** Deploy automated alerts for suspicious behaviors and place hidden decoy assets ("honeytokens") in databases or user accounts to catch malicious activity with virtually no false positives
+* ***Standardize monitoring & SOC playbooks:*** Define clear detection rules, playbooks, and developer guidance so DevSecOps and SOC teams can respond swiftly to threats - optionally using AI/behavioral analysis for accuracy
+* ***Adopt response plans & leverage specialized security tools:*** Implement an established incident response framework (like NIST SP 800-61), train developers to recognize attacks, and utilize logging/protection software
+### Example attack scenarios
+###### Scenario #1:
+* A children's health plan provides website operator couldn't detect a breach due to a lack of monitoring and logging
+  * An external party informed the health records of more than 3.5 million children
+* A post-incident review found that the website developers had not addressed significant vulnerabilities
+  * There was no logging or monitoring of the system, the data breach could have been in progress since 2013, a period of more than 7 years
+###### Scenario #2:
+* A major indian airline had a data breach involving more than 10 years' worth of personal data of millions of passengers
+* The data breach occurred at a third-party cloud hosting provider, who notified the airline of the breach after some time
+###### Scenario #3:
+* A major European airline suffered a GDPR reportable breach
+* The breach was reportedly caused by payment application security vulnerabilities exploited by attackers, who harvested more than 400,000 customer payment records
+* The airline was fined 20 million pounds as a result by the  privacy regulator
 
 ## A10:2025 - Mishandling of Exceptional Conditions 
