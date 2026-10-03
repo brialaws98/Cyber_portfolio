@@ -30,7 +30,7 @@ CISA has just released an alert on a new zero-day vulnerability for Apache Log4j
    * The *Product Development team* has ownership of the affected infrastructure
 ###### Points to draft the email:
 * ***Affected team (product):*** Product Development (Product Development Staging Environment)
-* ***Vulnerability description:*** 
+* ***Vulnerability description:*** ***Log4j*** is a common open-source Java-based logging utility used by developers to record system events, errors, Nd operational messages in software applications. You can learn more in the NSIT disclosures: CVE-2021-44228, CVE-2021-45105, and CVE-2021-45046.
 * ***Vulnerability risk/impact:*** Critical - An attacker can archive full Remote Code Execution (RCE) without requiring authentication
 * ***Vulnerability remediation:***
   * Identify assets by Log4Shell and other Log4j-related vulnerabilities
