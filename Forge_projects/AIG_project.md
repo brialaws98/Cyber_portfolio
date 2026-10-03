@@ -99,4 +99,3 @@ if __name__ == "__main__":
     main()
 ```
   * This allowed be to get into the secret file that was affected by the ransomware
-
