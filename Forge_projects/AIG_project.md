@@ -7,5 +7,8 @@
 * Then, apply the Intel to reduce the risk of an attack on AIG
 
 ## Task #1
+CISA has just released an alert on a new zero-day vulnerability for Apache Log4j. Research the vulnerability and publish an advisory to affect teams to affected teams to alert and prevent exploitation.
+###### What you'll learn:
+* How to address a vulnerability that may affect Product Development Staging Environment infastructure
 
 ## Task #2
