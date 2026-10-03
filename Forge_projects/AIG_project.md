@@ -62,4 +62,41 @@ One of our system has been exploited by the Log4j vulnerability and the attacker
 * ***Bruteforcing:*** *The act of repeatedly trying different combinations to break the password encryption
 * Ransomware will often encrypt all files on a device, and sometimes give the decryption key after the ransome has been paid (but this is not always the case!)
   * In this task, I will break the encryption without paying the ransom
+###### Steps taken to write and execute the brute-force
+*  I was provided a fundamental Python 3+ template to download
+  * After downloading it, I then unzipped the file and discovered a file called *EncryptedFilePack* that included: Rockyou.txt (list of possible passwords), bruteforce.py (Python Script to decrypt), and enc.zip (The file that needs to have the decrypted password entered to unzip this file)
+  * I edited the Python file as shown bellow:
+```
+# Use a method to attempt to extract the zip file with a given password
+# def attempt_extract(zf_handle, password):
+def attempt_extract(zf_handle, password):
+    try:
+        zf_handle.extractall(pwd=password)
+        return True
+    except:
+        return False
+
+def main():
+    print("[+] Beginning bruteforce ")
+    with ZipFile('enc.zip') as zf:
+        with open('rockyou.txt', 'rb') as f:
+            # Write your logic here...
+            # Iterate through password entries in rockyou.txt
+            for p in f:
+                password = p.strip()
+                # Attempt to extract the zip file using each password
+             # Handle correct password extract versus incorrect password attempt)
+                if attempt_extract(zf, password):
+                    print("[+] Correct password: %s" % password)
+                    exit(0)
+                else:
+                    print("[-]Incorrect password: %s" % password)
+
+    #print("[+] Password not found in list")
+    print("[+] Password not found in list")
+
+if __name__ == "__main__":
+    main()
+```
+  * This allowed be to get into the secret file that was affected by the ransomware
 
