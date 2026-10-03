@@ -20,6 +20,7 @@ Investigate a simulate cyber-attack scenario involving a mid-sized company that 
   * By Midday, several employees reported being locked out of systems, and a ransom note on the shared drive
 * You are a ***Cybersecuirty Analyst Graduate*** on the internal security team
   * Been asked to assist in investigating the incident and preparing a report for the executive team
+###### Incident report:
 * ***Incident Type:*** Ransomware attack
 * ***Initial Entry Point:*** A phishing email sent to a finance team member, containing a malicious Excel attachment
 * ***Compromised Data:***
@@ -37,3 +38,34 @@ Investigate a simulate cyber-attack scenario involving a mid-sized company that 
 
 # Task #2: Cybersecurity Risk Assessment
 ###### Will practice identifying what parts of a company's technology and data are most valuable (the assets), what threats put those assets at risk, and how likely those risks are to happen. Will then prioritize these risks and compile a report of findings. This approach helps organizations manage risks before they turn into real problems.
+### Task Overview
+###### What you'll learn
+* Will learn how to systematically identify and priorities Cybersecurity risks using Cybersecurity risks to develop and communicate effective mitigation strategies
+###### What you'll do
+* Analyse an organisation and their assets to create a detailed outline of the potential threats and risks
+
+### The task
+* As a Cyber Security professional you've been asked to review and organization and complete a detailed Risk Report of your findings
+* ***Client Overview:***
+  * RetailNove Pty Ltd is a retail company headquartered in Melbourne, Autralia
+    * Founded in 2012, the company has grown to employ approximately 1,200 staff and generates and annual revenue of $450 million
+    * Sells consumer electronics, home appliances, and lifestyle products through both physical stores and robust e-commerce platform
+   * Digital infrastructure includes:
+     * Custom-built e-commerce website and mobile application
+     * Integrated with payment gateways PayPal
+     * Afterpay
+    * Uses cloud-connected point-of-sale system across its 85 stores nationwide
+      * Customer relationship management is handled through Salesforce
+      * SAP is used for enterprise resource planning
+      * Covers inventory, finance, and HR
+      * Company relies on AWS for hosting and it integrates with third party services for logistics, marketing, and loyalty programs
+     * Collects and stores a variety of customer data, including personal information
+       * Retains tokenized payment details, purchase history, behavioral analytics, and loyalty program data
+     * Employee access to systems is managed through role-based access control (RBAC)
+       * Corporate staff are allowed to use their own devices under a BYOD policy and access internal systems remotely via VPN
+       * Internal communication is facilitated through Microsoft Teams and Slack
+     * Has experienced several Cybersecurity incidents in recent years
+       * In 2023, a phishing attack targeted customer service representatives, resulting in credential compromise
+       * In 2024, a ransomware attempt was thwarted by endpoint protection, though it caused a two-hour downtime
+       * In 2025, a data leak from a third-party marketing vendor exposed the email addresses of 5,000 customers
+     * The company has implemented basic security awareness training for its staff and uses Firewalls and antivirus software
