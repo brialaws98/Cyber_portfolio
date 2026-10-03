@@ -49,5 +49,17 @@ One of our system has been exploited by the Log4j vulnerability and the attacker
 ###### What you'll do
 * Write a PPython script to bruteforce the decryption key of the encrypted file, to avoid paying a ransom
 ### Setting the scene for the task
+* The advisory email that was put together and sent to the affected team provided context on what the vulnerability was, and how to remediate it
+* Unfortunately, an attacker was able to exploit the vulnerability on the affected server and begin installing a ransomware virus
+  * The Incident Detection & Response team was able to prevent the ransomware virus from completely installing, so it only managed to encrypt on zip file
+* Internally, the Chief Information Security Officer does not want to pay the ransom
+  * There isn't any guarantee that the decryption key will be provided or that the attackers won't strike again in the future
+* We are Tasked with bruteforcing the decrytionn key
+  * Based on the attacker's sloppiness, we don't expect this to be be a complicated key
+  * They used copy-pasted payloads and immediately tried to use ransomware instead of moving around laterally on the network
 ### Background information
+* Will write a Python Script to bruteforce the decryption key of the encrypted file
+* ***Bruteforcing:*** *The act of repeatedly trying different combinations to break the password encryption
+* Ransomware will often encrypt all files on a device, and sometimes give the decryption key after the ransome has been paid (but this is not always the case!)
+  * In this task, I will break the encryption without paying the ransom
 
