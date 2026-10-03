@@ -14,7 +14,7 @@ CISA has just released an alert on a new zero-day vulnerability for Apache Log4j
 * Review some recent publications from the Cybersecurity & Infrastructure Security Agency (CISA)
 * Research the reported vulnerability
 * Draft an email to affected teams to alert then of the vulnerability, and explain how to remediate
-###### Background information:
+### Background information:
 * I am an ***Information Security Analyst*** in the Cyber & Information Security Team
   * Common task include staying on top of emerging vulnerabilities to make sure that the company can remediate them before an attacker can exploit them
 * Will be asked to review some recent publications from the CISA, *an Agency that has the goal of reducing the nation's exposure to cyber security threats and risks
@@ -28,7 +28,7 @@ CISA has just released an alert on a new zero-day vulnerability for Apache Log4j
 2. Analyze the "Infrastructure List" to find out which infrastructure may be affected by the vulnerability, and which team has ownership
    * The *Product Development Staging Environment* infrastructure may be affected by the vulnerability
    * The *Product Development team* has ownership of the affected infrastructure
-###### Points to draft the email:
+### Drafting the email:
 * ***Affected team (product):*** Product Development (Product Development Staging Environment)
 * ***Vulnerability description:*** ***Log4j*** is a common open-source Java-based logging utility used by developers to record system events, errors, Nd operational messages in software applications. You can learn more in the NSIT disclosures: CVE-2021-44228, CVE-2021-45105, and CVE-2021-45046.
 * ***Vulnerability risk/impact:*** Critical - An attacker can archive full Remote Code Execution (RCE) without requiring authentication
@@ -42,3 +42,12 @@ CISA has just released an alert on a new zero-day vulnerability for Apache Log4j
   * Can assume the infrastructure owner is technical
   * Explain the risk/impact, method of exploitation, and remediation steps
 ## Task #2
+One of our system has been exploited by the Log4j vulnerability and the attacker just tried to load some ransomeware! Write a bruteforcer to break into the ransomware-encrypted files, so we don't have to pay the ransom
+###### What you'll learn
+* What 'bruteforcing' involves
+* How to respond to a ransomware virus using Python
+###### What you'll do
+* Write a PPython script to bruteforce the decryption key of the encrypted file, to avoid paying a ransom
+### Setting the scene for the task
+### Background information
+
