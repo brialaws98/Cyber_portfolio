@@ -25,5 +25,20 @@ CISA has just released an alert on a new zero-day vulnerability for Apache Log4j
   * The [second advisory](https://www.cisa.gov/news/2022/02/09/cisa-fbi-nsa-and-international-partners-issue-advisory-ransomware-trends-2021) explores how ransomware has been increasing for a large company like AIG
 * Task is to respond to the Apache Log4j zero-day vulnerability that was released to the public by advising affected teams of the vulnerability
 1. Conduct your research on the vulnerability using the "CISA Advisory" resources provided above as a starting point
-2. Analyze the "Infrastructure List" to find out which infrastructure may be affected by the vulnerability, and which team has ownership 
+2. Analyze the "Infrastructure List" to find out which infrastructure may be affected by the vulnerability, and which team has ownership
+   * The *Product Development Staging Environment* infrastructure may be affected by the vulnerability
+   * The *Product Development team* has ownership of the affected infrastructure
+###### Points to draft the email:
+* ***Affected team (product):*** Product Development (Product Development Staging Environment)
+* ***Vulnerability description:*** 
+* ***Vulnerability risk/impact:*** Critical - An attacker can archive full Remote Code Execution (RCE) without requiring authentication
+* ***Vulnerability remediation:***
+  * Identify assets by Log4Shell and other Log4j-related vulnerabilities
+  * Upgrading Log4j assets and affected Products to the latest version as soon as patches are available and remaining alert to vendor software updates
+  * Initiating hunt and incident response procedures to detect possible Log4Shell exploitation
+* ***Any assurances to ensure advisory was actioned***
+* Tips for email:
+  * Make it direct and straight to the point
+  * Can assume the infrastructure owner is technical
+  * Explain the risk/impact, method of exploitation, and remediation steps
 ## Task #2
