@@ -46,6 +46,41 @@
 5. d9053951a8d1c15254b46ec9fc974a6b : ```-9816```
 
 # Pokemon (Medium)
+###### Our analysts have obtained password dumps storing hacker passwords. After obtaining a few plaintext passwords,  it appears that they are based on Pokemon.
+### Introduction
+* Questions can be solved using [hashcat](https://hashcat.net/wiki/doku.php?id=dictionary_attack) with a [wordlist of Pokemon](https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number)
+### Guide
+* Add all hashes for the challenge to a text document and save it as ``hash.txt``
+* Need to create a wordlist
+  * Find a wordlist of all of the Pokemon on one page or even look at the developer tools on the webpage
+* To create a wordlist from a website, can use ``curl``
+  ``curl`` is a general-purpose tool for making HTTP requests
+```
+curl -s -L \
+  -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+  -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
+  "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number" \
+  | grep -oP 'title="\K[^(]+(?=\s\(Pok)' \
+  | sort -u > pokemon.txt
+```
+* Here is a breakdown to the command:
+  * The ``s`` flag downloaded the files
+  * ``?Limit=2000``: Set the limit to 2000 forces the server to return every single  Pokemon in a single response
+  * ``grep -oP "name"=\K[^"]+'``
+    * ``-o`` Prints only the specific text that matches the pattern
+    * ``P`` Enables advanced regex
+    * ``\K``(Keep) is a powerful regex meaning *"drop everything matched up to this point from the final output"* and ensures ``"name:"`` is discarded, leaving only what comes next
+    * ``[^"]+`` Matches one or more characters that are not double quotes
+### Solution
+```hashcat [filenames] -m 0 -a 0 [wordlist]```
+* ``-m 0``: uses hash-mode ``0`` - indicates the hashes are MD5 hashes
+* ``-a 0``: use a dictionary attack (this requires a wordlist to be specified)
+### Questions 
+1. a532443f3e04a9e00295a8cd2a75e080 : ```golduck```
+2. 54c10b9736b70e75c6e505f340b6e2f1 :  ```basculin```
+3. b8a24794813a47521b4be55747e0665a :  ```celebi```
+4. 83b020b0a7b3c353e1c11b1647b53cda :  ```rotom```
+5. 999cae1e22fe69d89d6f56e3050f18cb :  ```goldeen```
 
 # Law & Order (Hard)
 
