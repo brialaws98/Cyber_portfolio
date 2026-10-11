@@ -1,2 +1,2 @@
 # Nmap Network Reconnaissance & Security Auditing Exercise
-[Downloadable documentation](Nmap_recon.docx)
+###### [View documentation](Nmap_recon.docx.pdf)
