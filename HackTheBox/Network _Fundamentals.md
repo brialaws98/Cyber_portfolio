@@ -85,10 +85,21 @@ Protocols like IP and ICMP operate at this layer, ensuring that data reaches its
 #### IP *(Internet Protocol)* Addresses
 * A numerical label assigned to each device connected to a network that utilizes the IP for communication
 There are two versions of IP addresses: IPv4 (32-bit) and IPv6(128-bit)
-## Ports
+#### Ports
 * *A number assigned to specific processes or services on a network to help computers sort and direct network traffic correctly
 * Facilitate the simultaneous operation of multiple network services
 * Use the [netstat](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netstat) tool to view active connections and listening ports
 * ***Well-known port*** (0 - 1023) are reserved for common and universally recognized services and protocols
 * ***Registered Ports*** (1024 - 49151) are not strictly regulated but are still registered and assigned to specific services by the Internet Assigned Numbered Authority (IANA)
-  * Commonly used for external services. Helps in managing network traffic and preventing port conflicts a
+  * Commonly used for external services. Helps in managing network traffic and preventing port conflicts
+## Dynamic Host Configuration Protocol (DHCP)
+## Network Address Translation (NAT)
+## Domain Name System (DNS)
+
+# Internet Architecture and Wireless Technologies
+## Internet Architecture
+## Wireless Networks
+
+# Network Security and Data Flow Analysis
+## Network Security
+## Data Flow Example
