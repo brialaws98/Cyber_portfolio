@@ -29,3 +29,25 @@
 * Using ```nmap <target IP>``` will return open TCP ports present on the target
 
 ## Chapter 3 - Target Acquired
+###### ```nmap -p<target ports> -sC -sV <target IP>```
+ * Adding the ``-sC`` and ``-sV`` options will allow Nmap to determine the version of whatever program is listening on a given port, as well as additional information
+* Nmap tells us that the FTP (21) services has *Anonymous FTP* enabled
+  * Means that anyone is able to connect to the FTP service
+* The HTTP(80) service does not return as much information
+* Initial Nmap scan operates at ***Layer 4*** of the OSI model
+* For scans such as the version scan (``-sV``) or default scan (``-sC``), Nmap uses protocol=specific ***layer 7*** packets
+###### ```nc <target IP> <port>```
+ * We are telling [netcat](https://en.wikipedia.org/wiki/Netcat), a utility for making raw TCP/UDP connections, to connect to port 21 on the target machine
+   * Once connected, are greeted with a banner from FTP service. indicating a successful connection
+* Next step is to login as an *anonymous user* by using [Passive Mode](https://www.geeksforgeeks.org/difference-between-active-and-passive-ftp/)
+  * Used the following to complete this task
+```
+USER anonymous[Ctrl+V][Enter][Enter]
+PASS anything[Ctrl+V][Enter][Enter]
+PASV[Ctrl+V][Enter]{Enter]
+```
+  * FTP requires a *return character and a new-line character (\r\n)* for its commands
+* To determine the port number, I need to do some calculations because of the limitations in the FTP protocol
+  * The full port cannot be displayed at once, so it is instead split to 2 small numbers p1 and p2; the last two numbers in the output
+  * Then the real port is calculated as ``p1*256 + p2`` (See [this documentation](http://www.faqs.org/rfcs/rfc959.html) for more information
+??????return to this part????
