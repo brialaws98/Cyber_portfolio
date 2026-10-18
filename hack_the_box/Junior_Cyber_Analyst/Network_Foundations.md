@@ -16,4 +16,16 @@
 * *Port forwarding* ~ A technique that allows traffic sent to one TCP/UDP port to be redirected to another
 
 ## Chapter 2 - Having Tuns of Fun
+* At the end of Chapter one, we successfully investigated two out of three available network interfaces
+  * *Loopback*(lo): Allow to send the network traffic to itself
+  * *Public IP*(ens3): Enables to communicate with us over the internet
+* That leaves the reamaining interface *tun0*
+* After entering ```ip route get <target IP>```
+  * Will display the route taken for any traffic sent to reach the target
+  * Shows that all traffic of the target is routed through ``tun0``, a VPN tunnel that connects the VM to the private network
+* Use ```ping -c 4 <target IP>``` to test the reachability of a host on a network
+  * Does not use TCP or UDP ports, making it a ***Layer 4*** protocol in terms of the OSI model
+  * Confirmed that the attack host and communicate with
+* Using ```nmap <target IP>``` will return open TCP ports present on the target
+
 ## Chapter 3 - Target Acquired
