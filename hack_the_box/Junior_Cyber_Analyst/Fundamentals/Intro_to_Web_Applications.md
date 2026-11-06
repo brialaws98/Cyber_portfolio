@@ -101,7 +101,8 @@
  * Classify data types within the source code and apply controls on what can or cannot be exposed to the client-side
  * Developers should review client-side code to ensure that no unnecessary comments or hidden links are left behind
 
-## HTML Injection
+## [HTML Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/03-Testing_for_HTML_Injection)
+* Occurs when unfiltered user input is displayed on page
 ## Cross-Site Scripting (XSS)
 ## Cross-Site Request Forgery (CSRF)
 
