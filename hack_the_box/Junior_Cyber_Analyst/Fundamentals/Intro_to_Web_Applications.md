@@ -137,7 +137,51 @@
 
 # Back End Components
 ## Back End Servers
-## Web Servers
+* The hardware and OS on the backend that hosts all of the applications necessary to run the web application
+* Fit in the [Data access layer](https://en.wikipedia.org/wiki/Data_access_layer)
+### Software
+* Contains 3 backend components:
+  * *Web Server*
+  * *Database*
+  * *Development Framework*
+* Many popular combinations of "stacks" for back-end servers. Some common examples include:
+
+|Combinations | Components |
+|:---|:---|
+|LAMP | Linux, Apache, MySQL, PHP |
+| WAMP | Windows, Apache, MySQL, PHP |
+| WINS | Windows, ITS, .NET, SQL Server |
+| MAMP | macOS, Apache, MySQL, PHP |
+| XAMPP | Cross-Platform, Apache, MySQL, PHP/PERL |
+* Can find a comprehensive list of Web Solution Stacks in this [article](https://en.wikipedia.org/wiki/Solution_stack)
+
+### Hardware
+* Contains all necessary hardwware
+
+## [Web Servers](https://en.wikipedia.org/wiki/Web_server)
+* An application that runs on the back-end serer, which handles all of the HTTP traffic from the client-side browser, routes it to the requested pages, and finally responds to the client-side browser
+* Usually run on TCP [ports](https://en.wikipedia.org/wiki/Port_(computer_networking)) ``80`` or ``443``
+  * Responsible for connecting end-users to various parts of the web application
+### Workflow
+ * The following are some of the most common [HTTP response code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status):
+
+| Code | Description |
+|:---|:---|
+|***Successful responses*** |
+| ```200 OK``` | The request has succeeded |
+|***Redirection messages*** |
+| ```301 Moved Permanently``` | The URL of the requested resource has been changed permanently |
+| ```302 Found``` | The URL of the requested resource has been changed temporarily |
+|***Client error responses***|
+|```400 Bad Request``` | The server could not understand the request due to invalid syntax |
+| ```401 Unauthorized``` | Unauthorized attempt to access page |
+|```403 Forbidden```` | The client does not have access rights to the content |
+|```404 Not Found``` | Ther server can not find the requested resource |
+|```405 Request Timeout``` | This response is sent on an idle connection by some servers, even without any previous request by the client |
+| ***Server error***| 
+|```500 Internal Server Error``` | The server has encountered a situation it doesn't know how to handle |
+| ```502 Bad Gateway``` | The server, while working as a gateway to get a response needed to handle the request, received an invalid response |
+| ```504 Gateway Timeout``` | The server is acting as a gateway and cannot get a response in time |
 ## Databases
 ## Developmental Frameworks & APIs
 
