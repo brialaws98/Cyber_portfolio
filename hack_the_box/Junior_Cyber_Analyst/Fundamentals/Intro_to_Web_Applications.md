@@ -200,11 +200,173 @@
    * *Adobe*
    * *Baidu*
 ### [NGINX](https://www.nginx.com/)
+* The second most common web server on the internet
+  * Host roughly 30% of all internet websites
+* Focuses observing concurrent web requests with relatively low memory and CPU load by utilizing an async architecture to do so
+  * Makes it very reliable web server for popular web applications and top businesses worldwide
+* Free and open-source
+  * Gives all the same benefits like security and reliability
+* Some popular websites that utilize this include:
+  * *Google*
+  * *Facebook*
+  * *Twitter*
+  * *Cisco*
+  * *Intel*
+  * *Netflix*
+  * HackTheBox*
 ### [IIS (Internet Information Services)](https://en.wikipedia.org/wiki/Internet_Information_Services)
+* Third most common web server on the internet
+  * Host around 15% of all web sites
+* Is developed and maintained by Microsoft and mainly runs on Microsoft Windows Servers
+* Usually host web applications developed for the Microsoft .NET framework
+* Very well optimized for Active Directory integration
+  * Includes features like *Windows Auth* for authenticating users using Active Directory, allowing them to automatically sign in to Web applications
+* Some popular websites that utilize this includes:
+  * *Microsoft*
+  * *Office365*
+  * *Skype*
+  * *Stack Overflow*
+  * *Dell*
+### Other Commonly used web servers
+* [Apache Tomcat](https://tomcat.apache.org/) for ```Java``` web applications
+* [NodeJS](https://nodejs.org/en/) for web applications developed using ``JavaScript``` on the back-end
 
-## Databases
+## [Databases](https://en.wikipedia.org/wiki/Database)
+* Web applications utilize back-end databases to store various content and information related to the web application
+  * Allows web applications to easily and quickly store and retrieve data and enable dynamic content that is different for each user
+* There are many different types of database, each of which fits a certain type of use
+* Most developers look for certain characteristics in a database:
+  * *speed* in storing and retrieving data
+  * *size* when storing large amounts of data
+  * *scalability* as the web application grows
+  * *cost*
+### [Relational](https://en.wikipedia.org/wiki/Relational_database)(SQL)
+* Store data in tables, rows,and columns
+  * Each table can have unique keys, which can link tables together and create relationships between tables
+* Relationship between tables within a database is called a **Schema**
+* Some of the most common relational databases include:
+
+| Type | Description |
+|:---|:---|
+| [MySQL](https://en.wikipedia.org/wiki/MySQL) | The most commonly used database around the internet. It is an open-source database and can be completely free of charge. |
+| [MSSQL](https://en.wikipedia.org/wiki/Microsoft_SQL_Server) | Microsoft's implementation of a relational database. Widely used with Windows Servers and IIS web servers | 
+| [Oracle](https://en.wikipedia.org/wiki/Oracle_Database) | A very reliable database for big businesses, and is frequently updated with innovative Database solutions to make it faster and more reliable. It can be costly, even for big businesses |
+| [PostgresSQL](https://en.wikipedia.org/wiki/PostgreSQL) | Another free and open-source relational database. It is designed to be easily Extensible, enabling adding advanced new features without needing a major change to the initial database design |
+
+### [Non-relational database](https://en.wikipedia.org/wiki/NoSQL)
+* Does not use tables, rows, columns, primary keys, relationships, or schemas
+* Instead stores data using various storage models
+* Very scalabe and flexible
+* There are 4 common storage models for this:
+  * Key-Value
+    * Usually stores data in *JSON* or *XML*
+    * Has a key for each pair, storing all of its data as its value
+    * Here is an example of JSON
+```
+{
+  "100001": {                                         <--#This is the key
+    "date": "01-01-2021",                             <--#These are the values
+    "content": "Welcome to this web application."
+  },
+  "100002": {
+    "date": "02-01-2021",
+    "content": "This is the first post on this web app."
+  },
+  "100003": {
+    "date": "02-01-2021",
+    "content": "Reminder: Tomorrow is the ..."
+  }
+}
+```
+  * Document-Based
+    * Stores complex JSON objects
+    * Each object has certain meta-data while storing the rest of the data 
+  * Wide-Column
+  * Graph
+* Some of the most common NoSQL databases include:
+
+| Type | Description |
+|:---|:---|
+| [MongoDB](https://en.wikipedia.org/wiki/MongoDB) | The most common *NoSQL database. It is free and open-source, uses the *Document-Based* model, and stores data in *JSON* objects |
+| [ElasticSearch](https://en.wikipedia.org/wiki/Elasticsearch) | Another free and open-source *No SQL* database. It is optimized for storing and analyzing huge datasets. Searching for data within this database is very fast and effective |
+| [Apache Cassandra](https://en.wikipedia.org/wiki/Apache_Cassandra) | Free and open-source. It is very scalable and is optimized for gracefully handling faulty values |
+
+### Use in Web Applications
+* First, the database has to installed and set up on the back-end server
+  * Once up and running, the web application can start utilizing it to store and retrieve data
+
 ## Developmental Frameworks & APIs
+* Some common web development frameworks include:
+  * [Larvel(https://laravel.com/)(```PHP```): Usually used by startup and smaller companies, as it is powerful yet easy to develop for
+  * [Express](https://expressjs.com/){```NODE.JS```): Used by *PayPal*, *Yahoo*, *Uber*, *IBM*, and *MySpace*
+  * [Django](https://www.djangoproject.com/)(```Python```): Used by *Google*, *YouTube*, *Instagram*, *Mozilla*, and *Pintrest*
+  * [Rails](https://rubyonrails.org/)(```Ruby```): Used by *Github*, *Hulu*, *Twitch*, *Airbnb*, and even *zTwitter* in the past
+### [APIs](https://en.wikipedia.org/wiki/API)
+* An important aspect is the use of Web APIs and HTTP Request parameters to connect the front-end to be able to send data back and fourth between them and carry out various functions within the web application
+* Utilized for front-end to ask the back-end for a specific task with specific input
+  * Back-end components process these requests, perform the necessary functions, and return a certain response to the front-end components
+  * Will render the end-user's output on the client-side
+### [SOAP](https://en.wikipedia.org/wiki/SOAP)(Simple Objects Access)
+* Shares data through XML
+* Useful for transferring structured data, or even binary data, and is often used with serialized objects
+  * Useful for sharing *stateful* objects
+* May be difficult to use for beginners or require long and complicated requests even for smaller queries
+### [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)(Representional State Transfer)
+* Shares data through the URL path
+  * Usually returns the output in JSON format
+* Usually focus on pages that expect one type of input passed directly through the URL path
+* Responses to REST API requests are usually made in JSON format
+* Uses various HTTP methods to perform different actions on the web application:
+  * ``GET``: request to retrieve data
+  * ``POST``: request to create data (non-idempotent)
+  * ``PUT``: request to create or replace existing data (idempotent)
+  * ``DELETE``: request to remove data
 
 # Back End Vulnerabilities
 ## Common Web Vulneraboolties
+### Broken Authentication / Access Control
+* Among the most common and most dangerous vulnerabilities for web applications
+* ***Broken Authentication:*** Allows attackers to bypass authentication functions
+  * *Example:* May allow an attacker to login without having a valid set of credentials for allow a normal user to become an administrator without having the privileges to do so
+* ***Broken Access Control:*** Allow attackers to access pages and features they should not have access to
+  * *Example:* A normal user gaining access to the admin panel
+* An [Auth Bypass](https://www.exploit-db.com/exploits/47388) vulnerability allows user to login without having an account
+### Malicious File Upload
+* Way to gain control over web applications is through uploading malicious scripts
+* If the web application has a file upload feature and does not properly validate the uploaded filed, may upload a malicious script, which will all to execute commands on the remote server
+* There is a [Metasploit Module](https://www.rapid7.com/db/modules/exploit/multi/http/wp_responsive_thumbnail_slider_upload/) that allows to exploit this vulnerability easily
+
+### [Command Injection](https://owasp.org/www-community/attacks/Command_Injection)
+* If not properly filtered and sanitized, attackers may be able to inject another command to be executed alongside the originally intended command
+  * Allows them to directly execute commands on the back-end servers and gain control over it
+
+### [SQL Injection](https://owasp.org/www-community/attacks/SQL_Injection) (SQLi)
+* May occur when the web application executed a SQL query
+
 ## Public Vulnerabilities
+* These vulnerabilities are usually caused by coding mistakes made during the development of a web application's back-end components
+### Public [CVE](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)
+* Many penetration tester make proof of concept exploits to test whether a certain public vulnerability can be exploited and usually make these exploits available for public use, for testing and educational purposes
+~~~~~~~~~
+Tips: 
+* First step is to identify the version of the web application
+  * Can be found in many locations, like the source code of the web application
+  * For open-source web applications, can check the repository of the web application and identify where the version numbers is shown
+* Then, check the same page on target web page application to confirm
+~~~~~~~~~~
+* Once web application is identified, can search Google for public exploits for this version of the web application
+* Can utilize online exploit databases, like:
+  * [Exploit](https://www.exploit-db.com/)
+  * [Rapid7DB](https://www.rapid7.com/db/)
+  * [Vulnerability Lab](https://www.vulnerability-lab.com/)
+
+### [Common Vulnerability Scoring System](https://en.wikipedia.org/wiki/Common_Vulnerability_Scoring_System) (CVSS)
+###### * An open-source industry standard for assessing the severity of a security vulnerability
+* Often used as a standard measurement for organizations and governments that need to produce accurate and consistent severity scores for their systems' vulnerabilities
+  * Helps with the prioritization of resources and the response to a given threat
+* Scores are based on a formula that uses several metrics:
+  * ***Base:*** produce a score ranging from 0 to 10
+  * ***Temporal:*** modifies the Base
+  * ***Environmental:*** Also modifies the Base
+* The [National Zvulnerability Database (NVD)](https://nvd.nist.gov/) provides CVSS scores for almost all known, publicly disclosed vulnerabilities
+* [Here](https://safe.security/resources/insights/cvss-v2-vs-cvss-v3/) is more information about differences between the two scoring systems
