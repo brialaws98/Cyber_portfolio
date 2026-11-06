@@ -370,3 +370,19 @@ Tips:
   * ***Environmental:*** Also modifies the Base
 * The [National Zvulnerability Database (NVD)](https://nvd.nist.gov/) provides CVSS scores for almost all known, publicly disclosed vulnerabilities
 * [Here](https://safe.security/resources/insights/cvss-v2-vs-cvss-v3/) is more information about differences between the two scoring systems
+* CVSS scoring [ratings different slightly](https://safe.security/resources/insights/cvss-v2-vs-cvss-v3/) between V2 and V3
+* The NVD does not facotr in Temporal and Environmental metrics
+  * The former can change over time due to external events
+  * The latter is a customized metric based on the potential impact of the vulnerability on a given organization
+* NVD provides a [CVSS v2 calculator](https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator) and a [CVSS v3 calculator](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator) that organizations can use to factor additional risk from Temporal and Environmental data unique to them
+  * Calculators are very interactive and can be used to fine-tune the CVSS score to environment
+* Here is a [guide](https://www.first.org/cvss/user-guide) to understand V2 and V3 and how to use the calculators to arrive at a given score
+
+### Back-end Server Vulnerabilities
+* Most critical vulnerabilities are found in web servers
+  * They are publicly accessible over the TCP protocol
+* Usually utilized after gaining local Access to the back-end servers or back-end network
+  * May be gained through external vulnerabilities or during internal penetration testing
+* Usually used to gain high privileged access on the back-end servers or the back-end network or gain control over other servers within the same network
+  
+
