@@ -91,7 +91,16 @@
 ## JavaScript
 
 # Front End Vulnerabilities
-## Sensitive Data Exposure
+## [Sensitive Data Exposure](https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure)
+* Refers to availability of sensitive data in clear-text to the end-user
+  * Usually found in *source code* of the web page or page source
+### Prevent
+* Frontend source code should only contain the code necessary to run all of the web applications functions
+  * No extra code or comments
+  * Important ton review code that will be visible to end-users through the page source or run it through tools to check for exposed information
+ * Classify data types within the source code and apply controls on what can or cannot be exposed to the client-side
+ * Developers should review client-side code to ensure that no unnecessary comments or hidden links are left behind
+
 ## HTML Injection
 ## Cross-Site Scripting (XSS)
 ## Cross-Site Request Forgery (CSRF)
