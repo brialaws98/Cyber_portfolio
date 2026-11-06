@@ -103,8 +103,37 @@
 
 ## [HTML Injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/03-Testing_for_HTML_Injection)
 * Occurs when unfiltered user input is displayed on page
-## Cross-Site Scripting (XSS)
-## Cross-Site Request Forgery (CSRF)
+
+## [Cross-Site Scripting (XSS)](https://owasp.org/www-community/attacks/xss/)
+* Attacks by injecting *JavaScript* code to be executed on the client-side
+  * Once execute code on victim's machine, can potentially gain access to victim's account or even their machine
+* There are three main types of XSS:
+
+| Type | Description |
+| :--- | :--- |
+| Reflected XSS | Occurs when user input is displayed on the page after processing (e.g., search result or error message |
+| Stored XSS | Occurs when user output is stored in the backend database and then displayed upon retrieval (e.g., posts or comments |
+| DOM XSS | Occurs when input is directly shown in the browser and is written to an HTML DOM object (e.g., vulnerable username or page title)
+
+## [Cross-Site Request Forgery (CSRF)](https://owasp.org/www-community/attacks/csrf)
+* Attacks may utilize XSS vulnerabilities to perform certain queries and API calls on a Web application that the victim is currently authenticated to
+  * Would allow attackers to perform actions as the authenticated user
+  * May utilize other vulnerabilities to perform same functions
+* Can be leveraged to attack admins and gain access to their accounts
+### Prevention
+* Important to filter and sanitize user input on the frontend before it reaches the backend
+* Two main controls must be applied when accepting user input:
+
+| Type | Description |
+|:---|:---|
+| Sanitization | Removing special characters and non-standard characters from user input before displaying it or storing it |
+| Validation | Ensuring that submitted user matches the expected format (I.e., submitted email matched email format) |
+
+* Important to sanitize displayed output and clear any special/non-standard characters
+  * Once sanitize and/or validate user input and displayed output, should be able to prevent attacks
+* Implement [Web application firewall](https://en.wikipedia.org/wiki/Web_application_firewall), which can help prevent injection attempts automatically
+  * Can be potentially bypassed
+* The [Cross-Site Request Forgery Prevention Cheat SHeet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html) from OWASP discusses the attack and prevention measure in great detail
 
 # Back End Components
 ## Back End Servers
