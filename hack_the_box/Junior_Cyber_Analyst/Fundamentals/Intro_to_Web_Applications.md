@@ -182,6 +182,26 @@
 |```500 Internal Server Error``` | The server has encountered a situation it doesn't know how to handle |
 | ```502 Bad Gateway``` | The server, while working as a gateway to get a response needed to handle the request, received an invalid response |
 | ```504 Gateway Timeout``` | The server is acting as a gateway and cannot get a response in time |
+* [JSON](https://www.w3schools.com/js/js_json_intro.asp)
+* [cURL](https://en.wikipedia.org/wiki/CURL)
+### [Apache](https://www.apache.org/)
+* *https* is the most common web server on the internet
+* Host more than 40% of all internet websites
+* Usually come pre-installed in most *Linux* distributions
+  * Can be installed on Windows and macOS servers
+ * Usually used with *PHP* for web application development
+ * Users can install a variety of Apache modules to extend its functionality and support more languages
+ * An open-source project
+   * Community users can access its source code to fix issues and look for vulnerabilities
+ * Well-maintained and regularly patched against vulnerabilities to keep safe against exploitation
+ * Commonly used by startups and smaller commpanies
+ * Some big companies utilize this, including:
+   * *Apple*
+   * *Adobe*
+   * *Baidu*
+### [NGINX](https://www.nginx.com/)
+### [IIS (Internet Information Services)](https://en.wikipedia.org/wiki/Internet_Information_Services)
+
 ## Databases
 ## Developmental Frameworks & APIs
 
