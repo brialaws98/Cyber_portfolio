@@ -43,14 +43,41 @@
     * Helps identify if an organization has the necessary ability to detect and respond to security incidents
     * Helps identify gaps in monitoring systems, incident response procedures, and overall security awareness
   * ***Accessing Real-World Impact:***
+    * By simulating real-world attack scenarios, provide with the conducted penetration tests a realistic assessment of the potential impact of a successful breach
+    * Includes understanding the extent of possible data loss, system compromise, or business disruption 
   * ***Prioritizing Remediation Efforts:***
+    * Results of a pentest can help organizations to prioritize their security efforts and allocate resources more effectively within the company
+    * Critical vulnerabilities that pose the greatest risk can be addressed first
   * ***Compliance and Due Diligence:***
+    * Regulatory frameworks require from companies frequent security checks like penetration tests and others
+    * Reason is to ensure that organizations are actually safeguarding their critical information, customer data, and their systems
+    * Helps organizations to prove their commitment to due diligence in cybersecurity
   * ***Enhancing Security Awareness:***
+    * Penetration test often reveal security issues that may not be apparent through other means
+    * Help to get the awareness about security risks among management, IT staff, and end-users
   * ***Verifying Patch Management:***
+    * Pentests can verify whether security patches and updates have been properly applied and are effectively mitigating known vulnerabilities
   * ***Testing New Technologies:***
+    * When new systems or applications are implemented within their internal or external infrastructure, penetration tastes help the company to ensure they they are securely configured before being deployed in a production environment
   * ***Providing a Baseline for Security Improvements:***
+    * The results of a pentest serve most of the time as a baseline for measuring security improvements over time
+    * Subsequent test can demonstrate progress in addressing identified issues
  
 ## Types of Penetration Tests
+* ***Black Box Testing***
+  * No prior knowledge of system
+  * Can reveal issues
+* ***White Box Testing***
+  * Full access to system
+  * Allows to identify problem
+* ***Gray Box Testing***
+  * Limited access
+* ***External testing***
+  * Focus on assets and services that are publicly accessible via the internet
+  * Simulates how an attacker might attempt to breach an organization's defenses from the outside
+* ***Internal testing***
+  * Conducted from within the organization's network infrastructure
+  * Simulates attack that could be initiated by malicious insider with legitimate access, or external threat actors who have successfully breached the network perimeter defenses
 ## Areas of Domains of Testing
 ## Penetration Test Benefits
 ## Compliance and Penetration Testing
