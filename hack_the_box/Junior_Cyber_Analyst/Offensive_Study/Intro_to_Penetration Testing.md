@@ -264,9 +264,40 @@
 * Any deviation from established ethical guidelines has potential to irreparably damage professional reputation and permanently end what could have been a promising career in security testing
 
 ## Penetration Texting vs. Vulnerability Assessment
+## Vulnerability Assessment
+* Functions as broad diagnostic scan of systems
+* Assessment process leverages automated scanning tools, designed to detect various types of vulnerabilities and system misconfigurations within the infrastructure
+* The fundamental objective remains straightforward yet comprehensive:
+  * Identify and document all possible vulnerabilities present within system environment, regardless of immediate exploitability or potential impact level
+## Penetration Testing
+* Actively attempting to compromise system security through controlled attempts
+* Professionals, operating under explicit authorization and strict parameters, assume the role of potential attackers
+## Key Difference in Approach and Execution
 
+|Vulnerability Assessment|Penetration Testing|
+|:---:|:---:|
+|Provides broad coverage through scanning and the identification of known security issues|Conduct targeted, in-depth investigations by actively attempting to exploit discovered or potential vulnerabilities|
+|Rely on automated scanning tools primarily that require minimal human intervention to operate effectively|Demands highly skilled security professionals who combine automated testing tools with sophisticated manual testing techniques and create problem-solving approaches to simulate real-world attack scenarios|
+|Monthly or quarterly basis, with additional scans performed following any significant system modifications or infrastructure changes to maintain security awareness|Follows an annual schedule, with additional test conducted after major system upgrades or architectural changes. These assessments become critical before deploying neew services or during the process of obtaining various security certifications and compliance validations|
+
+## Complementary Nature of Both Approaches
+* Best to incorporate both methodologies in a coordinated manner
+* ***Vulnerability Assessment*** Excel at identifying potential security issues
+  * Reports provide valuable input for planning routine maintenance and security updates
+* ***Penetration test*** provide practical validation of the actual risk levels associated with discovered vulnerabilities
+  * Test results often catalyze more significant investments in infrastructure
 # Penetrations Test Overview
 ## Structure of a Penetration Test
+1. ###### Pre-Engagement Phase
+2. ###### Information Gathering Phase
+3. ###### Vulnerability Assessment Phase
+4. ###### Exploitation Phase
+5. ###### Post-Exploitation Phase
+6. ###### Lateral Movement Phase
+7. ###### Proof of Concept
+8. ###### Post-Engagement Phase
+9. ###### Remediation Supporting and Retesting
+
 ## Prerequesites for a Penetration Test
 ## Required Skills
 ## Methodologies & Frameworks
