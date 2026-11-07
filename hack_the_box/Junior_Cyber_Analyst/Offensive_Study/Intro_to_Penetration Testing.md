@@ -369,14 +369,29 @@
   * Helps ensure that the client's security posture has genuinely improved as a result of the penetration test
 ## Prerequesites for a Penetration Test
 1. ###### Legal Authorization & Documentation
-2. ###### Scope Definition and Boundaries
-3. ###### Information Gathering
-4. ###### Communication Channels & Emergency Procedures
-5. ###### Testing Environment Preparation
-6. ###### Backup and Recovery Considerations
-7. ###### Documentation & Reporting
-8. ###### Professional Liability & Insurance
-9. ###### Confidentiality & Data Handling
+* Begins with a formal written agreement, called *Statement of Work (SoW)* or *Master Services Argreement (MSA*
+  * ***MSA:***
+    * Often used when there's an ongoing relationship between the client and the penetration testing service provider
+    * Outlines the overall terms and conditions of the business relationship
+  * ***SoW:***
+    * More specific to penetration testing engagement
+    * Needs to clearly outline the scope, limitations, and objectives of the penetration test
+* Crucial to obtain explicit written permission from the organization that owns the systems you'll be testing
+  * Verbal approval is not enough
+
+|Aspect|Master services Agreement|Statement of Work|
+|:---|:---|:---|
+|Purpose|Establishes the overall terms of the business relationship between the client and the service providers|Defines the specifics of a particular engagement|
+|Scope|Broad, covering general terms like payment terms, confidentiality, liability, and dispute resolution for all services|Narrow, detailing project-specific details like objectives,scope, deliverables, timeline, and testing parameters for one engagement.|
+
+3. ###### Scope Definition and Boundaries
+4. ###### Information Gathering
+5. ###### Communication Channels & Emergency Procedures
+6. ###### Testing Environment Preparation
+7. ###### Backup and Recovery Considerations
+8. ###### Documentation & Reporting
+9. ###### Professional Liability & Insurance
+10. ###### Confidentiality & Data Handling
 ## Required Skills
 ## Methodologies & Frameworks
 
