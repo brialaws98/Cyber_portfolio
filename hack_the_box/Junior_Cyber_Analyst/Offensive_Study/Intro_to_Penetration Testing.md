@@ -209,12 +209,59 @@
   * Testers can face criminal prosecution and career-endinb reputation damage
 * Bad testing practices often cause system failures, major business distribution, and event data breaches
 ### Core Ethical Principles
+* Ethical penetration testing follows key principles that all security professionals must follow
+1. ***"Do not Harm"***
+   * Testers must not damage systems, corrupt data, or disrupt business operations
+   * Every action needs careful evaluation to avoid negative impacts on the target system, both short-term and long-term
+3. ***Confidentiality***
+   * During an assessment, testers often obtain knowledge of sensitive data such as system vulnerabilities, personal information, business secretes, and proprietary data
+   * Must keep information completely confidential during and after the engagement
+     * Builds essential trust between security professionals and clients
 ### Legal Considerations and Authorization
+* Obtaining proper *written authorization* is an absolute requirement before initiating any penetration testing activities
+* Must secure explicit, documented permission that clearly outlines the scope and parameters of testing engagement
+* Contract or statement of work needs to exhaustively detail all authorized activities, specific systems/networks that are to be tested, as well as any limitations or restrictions that apply to the assessment
+* Helps to prevent any misunderstandings about the boundaries of work and serves as legal protection for actions
+* Crucial to understand that discovering potential attack actors or vulnerabilities does not constitute permission to exploit them
+  * Must maintain strict adherence to the agreed-upon boundaries
+* Maintaining boundaries builds trust and demonstrates commitment to ethical professional conduct
 ### Professional Conduct and Responsibility
+* Must maintain *clear and consistent communication channels* with clients throughout the engagement
+* Professional communication involves promptly reporting any critical security vulnerabilities
+* *Professional integrity* demands immediate accountability when issues arise during
+* Includes:
+  * Providing a full explanation of what happened
+  * Implementing immediate mitigation steps where possible
+  * Working collaboratively with clients to serve any problems that resulted from the testing activities
 ### Data Handling and Privacy
+* Penetration testers frequently come across sensitive data during assessments, such as personal information, financial records, or intellectual property. Ethically managing this data is critical:
+  * ***Data Extraction:*** Only removes data if it's specifically required by the test scope
+  * ***Data Security:*** Safeguard any data gathered during the test
+  * ***Data Disposal:*** Completely destroy all data once the test is concluded
+  * ***Personal Use:*** Never exploit the information for personal benefit
+  * ***Legal Compliance:***Adhere to privacy laws like GDPR or HIPA
 ### Documentation and Reporting
+* *Comprehensive documentation* is essential during penetration testing engaements
+  * Serves as a critical protective measure for all parties involved by establishing an unambiguous trail of all activities
+* Must systematically capture and detail every test executed, tools and configurations utilized, and findings from each phase of testing
+* Ensure complete transparency and accountability throughout engagement
+* When preparing reports, maintain strict professional objectivity and precise factual accuracy
+  * Avoidtemptation to sensatialize or exaggerate the severity of discovered vulnerabilities, or any improper attempts to secure additional business opportunities
+  * Concentrate efforts on providing detailed, actionable remediation steps that are properly prioritized and technically feasible for client
+* Each recommendation should include clear implementation guidance and specific steps for validation, enabling clients to effectively address identified security gaps
 ### Social Engineering Considerations
+* Social Engineering assessments require strict ethical standards
+* Testers must remain professional and respectful to all participants
+* Testers must avoid manipulative tactics that could hurt workplace morale, damage relationships, or cause psychological stress
+* Keep testing environment positive and constrictive
+* Organizations must provide *clear support* for employees in social engineering exercises
+  * Focus on positive learning rather than shaming those who fail tests
+* Failing to follow ethical guidelines can have severe consequences
+  * Organizations may face legal liability for privacy violations, emotional distress claims, or harassment allegations from affected employees
+* Unethical Social engineering can create a toxic work environment, destroy employee trust, and cause lasting psychological impact on victims
+  * Can result in increased employee turnover, decreased productivity, and breakdown in security awareness culture
 ### Building Trust and Reputation
+* Any deviation from established ethical guidelines has potential to irreparably damage professional reputation and permanently end what could have been a promising career in security testing
 
 ## Penetration Texting vs. Vulnerability Assessment
 
