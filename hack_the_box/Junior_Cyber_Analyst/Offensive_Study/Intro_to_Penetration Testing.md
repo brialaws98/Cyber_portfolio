@@ -383,6 +383,18 @@
 |:---|:---|:---|
 |Purpose|Establishes the overall terms of the business relationship between the client and the service providers|Defines the specifics of a particular engagement|
 |Scope|Broad, covering general terms like payment terms, confidentiality, liability, and dispute resolution for all services|Narrow, detailing project-specific details like objectives,scope, deliverables, timeline, and testing parameters for one engagement.|
+|Use Case|Used for ongoing or multiple engagements; it reduces the need to renegotiate terms for each new project.|Used for each new project or when specifics of the engagement change, even if under an existing MSA.|
+|Content|Includes general clauses about service delivery, intellectual property, termination, etc.|Includes detailed information on what will be tested, how, when, and any limitations or exclusions.|
+|Duration|Generally long-term, converting the duration of the business relationship.|Short-term, specific to the duration of the project or engagement.|
+|Legal Authorization|Provides the framework for legal Authorization to conduct services.|Provides explicit, written permission for the specific penetration testing activities.|
+|Amendment|If a company regularly hires a security firm, the MSA could cover all security services over time.|The SoW for one of those engagements would detail the exact penetration testing activities for a specific network.|
+* Additional penetration testers must secure a *"Get Out of Jail Free"* letter
+  * A.K.A. *Rules of Engagement* (RoE) document
+  * Serves as proof of authorization to perform potentially suspicious activities on the target systems
+  * Should include:
+    * Contact information for key stakeholders
+    * Emergency procedures
+    * The defined testing windows
 
 3. ###### Scope Definition and Boundaries
 4. ###### Information Gathering
