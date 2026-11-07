@@ -289,16 +289,94 @@
 # Penetrations Test Overview
 ## Structure of a Penetration Test
 1. ###### Pre-Engagement Phase
+* Sets foundation for entire penetration test
+* Testers work closely with the client to understand their specific needs, concerns, and objectives
+  * Define the scope of the test
+  * Establish timelines
+  * Demand which systems and networks will be tested
+* Documentation is creates
+  * *Rules of Engagement* (RoE) document ~ Outlines permitted testing activities
+  * Contact information for key personnel
+  * Emergency procedures
+* Testers and clients sign necessary legal documents
+  * *Non-Disclosure Agreements (NDAs)*
+  * Service contracts to protect both parties   
 2. ###### Information Gathering Phase
+* A.K.A. ***Reconnaissance***
+* Collecting as much relevant information about the target as possible
+* ***Passive Reconnaissance**
+  * Gathering information without directly interacting with the target systems
+  * Might include:
+    * Public records
+    * Searching social media
+    * Reviewing company websites
+    * Utilizing OSINT (*Open Source Intelligence*) tools
+  * Leaves no trace and poses no risk to the target infrastructure
+* ***Active reconnaissance***
+  * Involves direct interaction with the target systems
+  * Includes:
+    * Port scanning
+    * Service enumeration
+    * Banner grabbing
+  * Provides detailed technical information about the target environment 
 3. ###### Vulnerability Assessment Phase
+* *Analyze the information* gathered to identify potential security weaknesses
+* Involves using various automated scanning tools and manual techniques to discover vulnerabilities in the systems, applications, and network infrastructure
+* Analyze results, eliminate false positives, and understand how different vulnerabilities might be combined to create more significant security risks
+  * Requires deep technical knowledge and experience in understanding how various systems and applications work
 4. ###### Exploitation Phase
+* Attempt to *actively exploit* the vulnerabilities identified
+* Done to demonstrate real-world Impact of security weaknesses
+* Establish what an attacker might be able to achieve
+* Testers must carefully document activities and maintain a precise record of the systems accessed
+* Crucial to follow agreed-upon RoE and avoid causing any damage to production systems
+* Skilled testers often create detailed attack chains, showing how multiple vulnerabilities can be combined to achieve deeper access
 5. ###### Post-Exploitation Phase
+* Once initial access is gained, this phase begins
+* Involves activities such as privilege escalation, lateral Movement through the network, data ex filtration testing, and maintaining persistence
+* Goal is to understand the full extent of what an attacker could accomplish after breaching defenses
 6. ###### Lateral Movement Phase
+* Involves navigating through the network after initial access to discover additional systems, resources, and potential targets
+* Focus on identifying and exploiting trust within the network
+* Tester employ various techniques:
+  * Credential harvesting
+  * Pass-h=the-hash attacks
+  * Exploiting network protocols to move between systems
+* Helps demonstrate how an attacker could potentially spread through the organization's network infrastructure and access sensitive resources
 7. ###### Proof of Concept
+* Involves creating *detailed documentation and evidence* that demonstrates how vulnerabilities were exploited
+* Includes developing reliable and repeatable methods to reproduce the identified security issues
+  * Helps validate the findings and assists the client's technical team in understanding and fixing the vulnerabilities
+* Testers create specific examples, scripts, or code that showcase the exploitation process
+  * Resulting documentation includes
+    * Step-by-step procedures
+    * Required tools or configurations
+    * Any specific conditions necessary for the exploit to work
+ * This information is crucial for verifying the vulnerability and ensuring that the client's security testers can effectively test their fixes
 8. ###### Post-Engagement Phase
+* The reporting phase is crucial as it *transforms* the technical findings into *actionable information for the client*
+* Well-written report includes
+  * An executive summary for management
+  * Detailed technical findings for the IT team
+  * Clear recommendations for remediation
+* Each vulnerability should be clearly described, including it potential impact, steps to reproduce, and specific recommendations for the issue
+* Report should include evidence like screenshots and logs to support the findings
+* Risk ratings should be assigned to help the client prioritize their remediattion efforts
 9. ###### Remediation Supporting and Retesting
-
+* After delivering the report, engagements include a period of remediation support
+* Testers make themselves available to answer questions about findings and provide additional guidance on implementing fixes
+* Once client has addressed the identified vulnerabilities, a retest is often performed to verify that the fixes were implemented correctly and that no new vulnerabilities were introduced during the remediation process
+  * Helps ensure that the client's security posture has genuinely improved as a result of the penetration test
 ## Prerequesites for a Penetration Test
+1. ###### Legal Authorization & Documentation
+2. ###### Scope Definition and Boundaries
+3. ###### Information Gathering
+4. ###### Communication Channels & Emergency Procedures
+5. ###### Testing Environment Preparation
+6. ###### Backup and Recovery Considerations
+7. ###### Documentation & Reporting
+8. ###### Professional Liability & Insurance
+9. ###### Confidentiality & Data Handling
 ## Required Skills
 ## Methodologies & Frameworks
 
