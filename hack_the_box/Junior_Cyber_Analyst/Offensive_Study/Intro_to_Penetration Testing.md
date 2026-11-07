@@ -79,6 +79,35 @@
   * Conducted from within the organization's network infrastructure
   * Simulates attack that could be initiated by malicious insider with legitimate access, or external threat actors who have successfully breached the network perimeter defenses
 ## Areas of Domains of Testing
+* Rather than conducting a broad-spectrum security assessment, this type of testing concentrates exclusively on thoroughly examining and testing the company's infrastructure's environment. Testing includes but not limited to:
+###### Network Infrastructure
+* Most fundamental areas of penetration testing
+* Focus on examining all network-connected devices
+* Look for misconfigurations, weak passwords, outdated firmware, and security flaws that could allow unauthorized access
+* Common activities include:
+  * port scanning
+  * service enumeration
+  * analyzing network protocols
+* Helps identify potential paths that attackers use to move laterally within the network
+###### Web Application
+* Testing websites, web applications, and we services for security vulnerabilities
+* Look for common issues like SQL Injection, cross-site scripting (XSS), broken Authentication, and insecure direct object references
+* Testing process includes examining both front-end interface and back-end functionaliy
+* Evaluate how application handles user input, manages sessions, and protects sensitive data
+* Assess the security of API endpoints and third-party integrations that could potentially exposes vulnerabilities
+###### Mobile Application
+* Focuses on identifying vulnerabilities in mobile apps
+* Examine both Android and iOS applications
+* Involves analyzing how apps store sensitive information
+* Look for vulnerabilities in the app's runtime environment and evaluate whether the app properly validates certificate and handles secure communications
+###### Cloud Infrastructure
+* Involves evaluating the security of cloud-based resources
+* Check for misconfigurations in cloud services, improper access controls, and vulnerabilities in cloud-native applications
+* Requires understanding various cloud service providers and their security models
+* Examine identity access management (I AM), configurations, network security groups, and data storage permissions to ensure proper security controls are in place
+###### Physical Security
+###### Wireless Security 
+###### Software Security
 ## Penetration Test Benefits
 ## Compliance and Penetration Testing
 ## Ethics of a Penetration Test
