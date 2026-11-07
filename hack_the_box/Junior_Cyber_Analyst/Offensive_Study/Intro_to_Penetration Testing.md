@@ -105,9 +105,27 @@
 * Check for misconfigurations in cloud services, improper access controls, and vulnerabilities in cloud-native applications
 * Requires understanding various cloud service providers and their security models
 * Examine identity access management (I AM), configurations, network security groups, and data storage permissions to ensure proper security controls are in place
-###### Physical Security
-###### Wireless Security 
+###### Physical Security Testing and Social Engineering
+* Social Engineering testing
+  * Assess an organization's human elemant
+  * Often considered the weakest link in security
+  * Includes testing employees' susceptibility to phishing attacks, pretexting, and other social manipulation techniches
+* Physical Security Testing
+  * Involvesevaluating the security of physical locations
+  * Includes access controls, security cameras, and badge systems
+* Help organizations identify gaps in *security awareness* training and physical security measures
+* Testers might attempt access to buildings, test the effectiveness of security personnel, or conduct simulated phishing campaigns to evaluate employee awareness 
+###### Wireless Network Security
+* Focuses on evaluating the security of Wi-Fi networks and other wireless communications
+* Look for vulnerabilities that could allow unauthorized access to wireless networks or enable eavesdropping on wireless communication
+* Testing process involves analyzing wireless signal coverage, evaluating authentication mechanisms, and checking for proper networking segmentation between wireless and wired networks
+* Examine how guest networks are isolated from corporate networks and verify that proper security controls are in place
 ###### Software Security
+* Involves examining applications, operating systems, and firemware for security vulnerabilities
+* Focuses on identifying weaknesses in *software code*, architecture, and implementation that could be exploited by attackers
+* Analyze both compiled executable and source code to find potential security flaws
+* Testing process includes static and dynamic analysis, reverse engineering, and fuzzing to identify buffer overflows, memory leak, and other software vulnerabilities
+* Evaluate how the software handles input validation, memory management, and error handling to ensure robust security controls are implemented
 ## Penetration Test Benefits
 ## Compliance and Penetration Testing
 ## Ethics of a Penetration Test
