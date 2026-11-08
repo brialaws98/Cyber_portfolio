@@ -631,6 +631,7 @@
 ### Tools and Technologies
 * AWS or Azure Security Center
 * Thrid-party tools: Cloudsploit, Scout Suite, and Prowler
+## Physical Security Testing
 ## Social Engineering
 ## Mobile Security Testing
 ## Reverse Engineering
