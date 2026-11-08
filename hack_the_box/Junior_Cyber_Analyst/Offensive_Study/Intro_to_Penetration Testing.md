@@ -485,11 +485,115 @@
   * Consequences of unauthorized disclosure
 * Protect both the testing organization and the client by establishing clear legal boundaries around information handling and creating mutual understanding about confidentiality expectations
 ## Required Skills
+* Penetration testing is a *complex and multifaceted* profession that requires a diverse skill set for several key resasons:
+  * First, modern *IT environments* are incredibly complex, combining various technologies, systems, and architectures
+    * What matters is having the *ability to learn quickly* by understanding how these elements work together
+    * Requires fundamental knowledge spanning networking, operating systems, web technologies,and more
+  *  Second, successful penetration testing involves more than just technical skills
+    * Testers must be able to *think creatively and outside the box*, similar to an attacker, while at the same time maintaining ethical boundaries
+    * Must be able to communicate *professionally*0
+    * Combining technical and soft skills is essential for delivering value to clients 
+  *  Third,the Cybersecurity landscape is constantly evolving
+    * New technologies emerge, *new vulnerabilities* are discovered almost daily, and attack methods* become more sophisticated
+    * Requires lifelong leaarners who can adapt and expand skill set continuously
+  * Finally, penetration testing often involves high-stakes situations where mistakes *could potentially damage* critical systems or expose sensitive data
+    * Broad skill set required helps ensure tester can work competently and safely while providing meaningful security insight to clients
+
 ## Methodologies & Frameworks
+### Core Penetration Testing Methodolodies
+* ***Penetration Testing Execution Standard ([PTES](http://www.pentest-standard.org/index.php/Main_Page))*** ~ Provides a framework that divides the penetration testing process into seven distinct phases
+* ***Technical Guide to Information Security Testing and Assessment ([NIST](https://www.nist.gov/privacy-framework/nist-sp-800-115))*** represents a more formal approach
+  * Provides valuable guidance on security assessment planning
+  * This framework is relevant when working with government agencies or organizations that follow NIST guidelines
+* ***Open Web Application Security Project ([OWASP](https://owasp.org/www-project-web-security-testing-guide/stable/))*** is a widely adapted methodology that offers guidance for Web application security testing
+  * Provides a structured approach through four main phases:
+    * Information Gathering
+    * Configuration and Deployment Management Testing
+    * Identity Management Testing
+    * Authentication Testing
+  * The guide contains distinct testing procedures, along with practical examples, for nearly every vulnerability seen in web applications
+  * Updated continuously by the community to address emerging threats, making it tremendously valuable resource for anyone interested in web application security
+* The [MITRE ATT&CK](https://attack.mitre.org/) framework has become increasingly important
+  * Provides a comprehensive knowledge base of adversary tactics and techniques observed in real-world attacks
+  * Used to simulate realistic threat scenarios and ensure their testing covers the full spectrum of potential attack vectors
+### Choosing the Right Approach
+* Most professional pentesters *don't strictly adhere* to a single methodology but combine elements from various frameworks together
+  * Allows for flexibility while maintaining structure and thoroughness
+#### Developing Your Personal Methodology
+* Experienced pentesters often incorporate their unique experiences and lessons learned from previous engagements
+* Can be tailored to specific types of assessments or industries that a pentesters frequently encounter
+#### Steps to Develop Your Methodology
+* Start with established frameworks as foundation
+* Learn and practice to take notes properly for yourself
+* Learn and improve your problem solving approach
+* Document successful techniques and approaches from each box, Lab, and engagement
+* Incorporate tools and scripts that have proven effective, rewrite them, and write your own
+* Create custom checklists for different testing cases (web testing, network testing, information gathering, etc.)
+* Regularly update your methodology based on the experience you gain
 
 # Domains of Testing
 ## Web App Penetesting
+* Typically follow a three-tier architecture:
+  * Presentation tier (front-end)
+  * Applications tier (backend)
+  * Database tier
+### Common Web Application Vulnerabilities
+* Here are some of the most critical ones:
+  * Injection Vulnerabilities
+  * Authentication & Session Management
+  * Cross-Site Scripting
+### Essential Tools and Skills
+* Proxy tools like [Burp Suite Professional](https://portswigger.net/burp/pro) and [OWASP ZAP](https://www.zaproxy.org/) are essential for intercepting and analyzing web traffic
+### Legal and Ethical Considerations
+* Must always be conducted within legal and ethical boundaries
+* Understand and follow disclosure procedures
+* Remember web application penetration testing is not just about finding vulnerabilities
+  * It's about helping organizations improve their security postures
 ## Netowrk Security Testing
+* A systematic process of evaluating network infrastructure security by simulating real-world attack
+* Networks typically consist of various components
+  * Routers
+  * Switches
+  * Firewalls
+  * Servers
+  * Endpoints
+* Each component potentially harbor vulnerabilities that could compromise the entire network security
+* Understanding how these components interact and communicate is fundamental to conducting effective network penetration tests
+### Common Network Security Vulnerabilities
+
+|Vulnerability|Desctiption|
+|:---|:---|
+|***Misconfigured Services***|Improperly configured network services, default credentials, and unnecessary open ports that could provide unauthorized access|
+|***Unpatched Systems***|Systems and applications running outdated software versions with known security vulnerabilities|
+|***Weak Authentication***|Poor password policies, lack of multi-factor authentication, and insecure password storage mechanisms|
+|***Insecure Protocols***|Use of deprecated or unencrypted protocols like FTP, Telnet, or HTTP instead of their secure alternatives|
+|***Network Segmentation Issues***|Inadequate network segmentation allowing lateral movement between different security zones|
+|***Exposed Management Interfaces***|Administrative interface accessible from unauthorized networks or the internet|
+|***Missing Security Controls***|Absence of essential security measures like firewalls, IDS/IPS systems, or proper access controls|
+* Tools like [Nmap](https://nmap.org/) helps to map out the network and spot potential weak points by looking at which ports are open or closed, and what services are running
+* May use automated scanners like nmap, [Nessus](https://www.tenable.com/products/nessus), or [OpenVAS](https://openvas.org/)
+  * Still want to always double-check findings by hand to make sure they're real
+* In testing phase, try to use these weak spot to access systems or get sensitive data
+  * Must be careful not to cause damage
+  * If an old/unpatched version of a services is discovered, might test for something like a buffer overflow
+  * If an open FTP service could check and see if anonymous login is enabled
+* When using tools like [Metasploit](https://www.metasploit.com/) , knowing how vulnerabilities work is key
+* Keep detailed notes of everything accomplished
+### Essential Tool and Technologies
+* Requires proficiency with various tools. Some fundamental tools include:
+  * ***Network Mapping Tools:*** Tools like Nmap for network discovery and security auditing
+  * ***Vulnerability Scanners:*** Nessus, OpenVAS, and similar tools for identifying known vulnerabilities
+  * ***Exploitation Frameworks:*** Metasploit Framework for developing and executing exploit code
+  * ***Packet Analysis Tools:*** Wireshark for analyzing network traffic and identity potential security issues
+  * ***Password Cracking Tools:*** John the Ripper and Hashcat for testing password security
+* Understanding network protocols is crucial for effective penetration testing
+  * Key protocols include TCP/IP, UDP, IMCP, and application-layer protocols like HTTP, FTP, and SSH
+* Wireless network testing is a specialized aspect of network penetration testing
+  * Involves assessing the security of WiFi networks, including testing excryption protocols (WEP, WPA, WPA2, WPA3), analyzing authentication mechanisms, and identifying rogue access points
+### Common Pitfalls
+* *rushing* through the critical Reconnaissance phase without proper attention to detail
+* Placing excessive *reliance on automated scanning tools* without understanding their limitations
+* Neglecting to manually validated and verity findings through hands-on investigation
 ## Cloud Security Testing
 ## Social Engineering
 ## Mobile Security Testing
