@@ -368,7 +368,7 @@
 * Once client has addressed the identified vulnerabilities, a retest is often performed to verify that the fixes were implemented correctly and that no new vulnerabilities were introduced during the remediation process
   * Helps ensure that the client's security posture has genuinely improved as a result of the penetration test
 ## Prerequesites for a Penetration Test
-1. ###### Legal Authorization & Documentation
+1. ###### Legal Authorization & Documentation ~
 * Begins with a formal written agreement, called *Statement of Work (SoW)* or *Master Services Argreement (MSA*
   * ***MSA:***
     * Often used when there's an ongoing relationship between the client and the penetration testing service provider
@@ -388,6 +388,7 @@
 |Duration|Generally long-term, converting the duration of the business relationship.|Short-term, specific to the duration of the project or engagement.|
 |Legal Authorization|Provides the framework for legal Authorization to conduct services.|Provides explicit, written permission for the specific penetration testing activities.|
 |Amendment|If a company regularly hires a security firm, the MSA could cover all security services over time.|The SoW for one of those engagements would detail the exact penetration testing activities for a specific network.|
+|Example|If a company regularly hire a security firm, the MSA could cover all security services over time.|The SoW for one of those engagements would detail the exact penetration testing activities for a specific network.|
 * Additional penetration testers must secure a *"Get Out of Jail Free"* letter
   * A.K.A. *Rules of Engagement* (RoE) document
   * Serves as proof of authorization to perform potentially suspicious activities on the target systems
@@ -395,15 +396,94 @@
     * Contact information for key stakeholders
     * Emergency procedures
     * The defined testing windows
-
-3. ###### Scope Definition and Boundaries
-4. ###### Information Gathering
-5. ###### Communication Channels & Emergency Procedures
-6. ###### Testing Environment Preparation
+ 
+2. ###### Scope Definition and Boundaries ~
+* Well defined scope is essential for any penetration testing engagement
+* Should comprehensively document *all systems and assets* that are authorized for testing, including:
+  * IP ranges
+  * Domain names
+  * Web applications
+  * Network segments
+  * Individual systems
+* Documentation must explicitly outline what is strictly off-limits during the assessment, including:
+  * Critical infrastructure
+  * Medical devices
+  * Production databases
+  * Backup systems
+* Should clearly specify whether social engineering attampts or physical security assessments are permitted
+  * These require special considerations and often additional authorizations
+* Crucial to establish and document the *exact testing windows*, many organizations restrict testing to certain time periods
+  * These timing restrictions help minimize potential disruption to business operations and ensure adequate support staff are available if issue arise
+* Testing schedule should account for any planned system maintenance, backup operations, or other technical activities that could interfere with or be affected by the penetration test
+   
+3. ###### Information Gathering
+* Depending on the type and scope of the penetration test, a *comprehensive collection of technical information* about the target environment must be gathered before initiating any testing activities
+* This preparatory phase involves acquiring and analyzing various forms of documentation and intelligence
+* Understanding completed technology stack is paramount for effective testing preparation. The typically means obtaining detailed knowledge of:
+  * The target environment's operating systems and their versions
+  * All deployed applications and their configurations
+  * The various security controls implemented throughout the infrastructure
+* Involves *identification and documentation of sensitive systems or data* that require consideration during testing
+* Proper identification and documentation of these sensitive assets helps ensure that testing activities do not inadvertently cause disruption to critical services or compromise regulated data
+ 
+4. ###### Communication Channels & Emergency Procedures
+* Establish clear communication channels
+* Should have *contact information for key personnel*, including:
+  * Technical staff
+  * Project managers
+  * *emergency contacts*
+* Define escalation procedures for various scenarios
+* Create *incident response plans* that outline what to do if something goes wrong
+  * Should include immediate points of contact and procedures for halting testing if necessary
+   
+5. ###### Testing Environment Preparation
+* Ensure testing environment is properly configured before beginning, includes:
+  * Setting up isolated networks if required
+  * Preparing testing tools and platforms
+  * Configuring logging systems to document activities
+* Testing environment should be secure and separate from any personal or unrelated work to prevent cross-contamination
+* Verify testing tools are properly licensed
+   
 7. ###### Backup and Recovery Considerations
+* Confirm that the target organization has recent *backups of all system in scope*
+* Essential to have recovery options available
+* Discuss the organization's backup and recovery capabilities and ensure they're adequate for the planned testing activities
+ 
 8. ###### Documentation & Reporting
+* Establish documentation requirements *upfront*
+* Know what kind of reporting the client expects, including:
+  * Format
+  * Level of detail
+  * Any specific compliance requirements
+* Some organizations may require evidence of findings to be documented in particular ways for regulatory compliance
+* Plan how to maintain detailed logs of all testing activities
+  * These logs are crucial for writing the final report and can be essential if any issues arise during testing
+   
 9. ###### Professional Liability & Insurance
+* This type of specialized insurance protects against potential claims arising from testing activities, including:
+  * Accidental system damage
+  * Data Breaches
+  * Business interruption
+* Many clients have strict requirements regarding minimum insurance coverage levels
+  * Some may require specific riders or endorsements related to Cybersecurity testing
+* Crucial to regularly review and update coverage to ensure it remains adequate as testing activities evolve and expand
+    
 10. ###### Confidentiality & Data Handling
+* Establish clear *procedures for handling sensitive data* discovered during testing, including:
+  * How findings will be communicated
+  * How data will be stored and transformed
+  * When/how data will be destroyed after the engagement ends
+* Many organizations have specific requirements for handling their data, especially in regulated industries
+* Taking time to address prerequisites thoroughly will set the foundation for successful penetratio test
+  * One that provides value to the client while protecting all parties involved
+* *Non-Disclosure Agreement (NDA)* should be signed before any penetration testing engagement begins.
+* The NDA should clearly outline:
+  * The type of confidential information that will be protected
+  * Duration of confidential obligations
+  * Permitted uses of confidential information
+  * Data destruction requirements after project completion
+  * Consequences of unauthorized disclosure
+* Protect both the testing organization and the client by establishing clear legal boundaries around information handling and creating mutual understanding about confidentiality expectations
 ## Required Skills
 ## Methodologies & Frameworks
 
