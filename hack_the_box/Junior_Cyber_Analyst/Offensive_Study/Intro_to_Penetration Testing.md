@@ -595,6 +595,42 @@
 * Placing excessive *reliance on automated scanning tools* without understanding their limitations
 * Neglecting to manually validated and verity findings through hands-on investigation
 ## Cloud Security Testing
+* A specialized security assessment aimed at uncovering vulnerabilities and weaknesses within *cloud-based infrastructures*
+* Understand the basic cloud services models:
+  * Infrastructure as a Service (IaaS)
+  * Platform as a Service (PaaS)
+  * Software as a Service (SaaS)
+### Key Differences from Traditional Penetration Testing
+* Shared Responsibility Model, where security responsibilities are divided between the cloud services provider and the customer
+* Resources can be created, modified, or destroyed automatically, making it essential to adapt testing approach accordingly
+* Cloud environments often implement complex access controls and identify management systems that require specialized testing methodologies
+### Essential Skills for Cloud Penetration Testing
+* To be proficient need to develop expertise in several areas
+* Strong understanding of cloud platforms like AWS, Azure, or Google Cloud Platform is essential
+* Here are the common components of a cloud penetration test:
+  * The assessment begins with *Reconnaissance* and enumeration of cloud resources
+    * Involves identifying all services, storage buckets, databases, and other cloud components
+    * Utilizing tools like cloud-specific scanners and enumeration scripts can significantly aid this process
+  * *Access control* testing, where you access the implementation of *Identify and Access Management (IAM)* policies
+    * Includes Examining for overly permissive roles, misconfigured security groups, and weak authentication mechanisms
+  * Configuration Assessment is crucial, where you scrutinize cloud services in search of *security misconfigurations*
+    * Look out for issues like publicly accessible storage buckets or unencrypted databases
+  * Must forget network security testing
+    * Involves reviewing *virtual network configurations*, security groups, and network access controls to ensure they are set up correctly to mitigate risks
+  * *Data security testing*
+    * Evaluating the implementation of encryption, data loss prevention (DLP), and key management practices designed to safeguard sensitive information
+  * *Application security testing examine the security posture of cloud-native applications
+    * Includes checking for vulnerabilities in application code and API's, ensuring that they interact safely and securely with other cloud services
+### Common Vulnerabilities in Cloud Environment
+* Misconfigured storage buckets that expose sensitive data are common findings
+* Excessive permissions and inadequate I AM policies can lead to *privilege escalation opportunities*
+* Insecure API monitoring can make it difficult to detect and respond to security incidents
+* Container security issues are frequently encountered
+* Inadequate network segmentation and overly permissive security groups can expose services to unauthorized access
+* Lack of encryption for data at rest and it transit remains a significant concern
+### Tools and Technologies
+* AWS or Azure Security Center
+* Thrid-party tools: Cloudsploit, Scout Suite, and Prowler
 ## Social Engineering
 ## Mobile Security Testing
 ## Reverse Engineering
