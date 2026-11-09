@@ -632,10 +632,173 @@
 * AWS or Azure Security Center
 * Thrid-party tools: Cloudsploit, Scout Suite, and Prowler
 ## Physical Security Testing
+* Focuses on evaluating the effectiveness of physical security controls, barriers, and procedures meant to protect an organization's *physical assets*
+* Primary goal is to exploit gaps in security controls, bypassing them to gain unauthorized *physical access* to the facility or its assets
+### Key Conponents of Physical Security Testing
+* External security assessment begins with *evaluating the outer perimeter* of a facility
+  * Includes examining fences, gates, walls, and other physical barriers
+* Testers assess lighting conditions, surveillance camera placement and coverage, and potential blind spots
+  * Evaluate the effectiveness of perimeter Intrusion detection systems and identify potential entry points that might be overlooked by security personnel
+*  ***Access control systems*** are critical components of physical security
+  * Pentesters assess both the technical security of systems and practical implementation
+* Security guards and reception staff play a vital role in physical security
+  * Testers evaluate their adherence to *security potrols*, responses to suspicious activities, and enforcement of access control policies
+### Methodology and Approach
+* The initial phase involves gathering information about the target facility through *OSINT*
+  * Includes studying available information, satellite imagery, social media, and any other relevant sources
+* Often involves multiple visits at different times to understand how security measures vary throughout the day
+  * All attempts are carefully documented, including both successful and unsuccessful approaches
+### Common Testing Techniques
+* ***Social engineering*** plays a crucial role in physical security testing
+  * Helps identify weaknesses in human security controls and training needs
+* Testing often includes evaluating the security of physical locks
+* Modern physical security often incorporates *electronic systems*, which are also evaluated by the pentester
+  * Could include the testing *RFID cards* for cloning vulnerabilities, examining the security of access control panels, and assessing the integration of various security systems
+### Legal and Ethical Considerations
+* Must always be conducted within legal and ethical bounderies
+* During test assessment, privacy must be respected, and the activities performed must not pose risk to people or property
+* Testers must always carry their "Get Out of Jail Free" letter during engagements
+  * Documentation should detail the scope of work, authorization from the client, emergency contacts, and testing timeframes
+  * If confronted by security personnel or law enforcement, this documentation can quickly validate the legitimate nature of the testing activities and prevent unnecessary escalation or legal complications
 ## Social Engineering
-## Mobile Security Testing
-## Reverse Engineering
+* Focuses on the *human element* of cybersecurity
+  * Exploits human psychology and behavior patterns to gain unauthorized access to systems, networks, or physical locations
+  * Recognizes that humans are often the weakest link in the security chain
+* Can expose organizations to legal liability without proper authorization and documentation
+  * Manipulation of trust *can have lasting negative effected* on organizational culture and employee morals
+  * Must be carefully planned, executed under strict ethical guidelines, and include appropriate support mechanisms for affected employees
+  * Relies on key psychological principles that make humans vulnerable to manipulation, including:
+    * Authority ~ People tend to respond automatically to authority figures
+    * Urgency ~ Creates pressure that can lead to hasty decisions
+    * Fear ~ Can *paralyze critical thinking*
+    * Curiosity ~ Often compels people to click on suspicious links or open malicious attachments
+    * Trust ~ Can be exploited through relationship[ building and manipulation
+*  Exploits natural human tendencies ton bypass security measures and obtain sensitive information
+#### Common Social Engineering Techniques
 
+| Social Engineering Technique|Description|
+|:---:|:---|
+|***Phishing***|Most common attack. It involves sending deceptive emails that appear to come from legitimate sources, attempting to trick recipients into revealing sensitive information or taking harmful actions. ***Spear phishing*** takes this approach further by targeting specific individuals with personalized content based on detailed research|
+|***Pretexting***|The creation of a fabricated scenario to obtain information or access. This technique often requires detailed preparation and research to create convincing scenarios|
+|***Baiting***|Exploits human curiosity by leaving infected USB drives or other malicious devices in locations where targets might find and use them. This technique plays on people's natural tendency to investigate unknown items|
+* Physical social engineering involves gaining unauthorized physical access to facilities through various techniques
+  * Requires strong interpersonal skills, quick thinking, and the ability to maintain composure under pressure
+### Conducting Social Engineering Assessments
+* Begins with meticulous and thorough *Reconnaissance* of the target environment
+  * Involves gathering detailed information about the target organization
+* Professional testers utilize information sources
+  * These sources can reveal invaluable insights about the organization's operations, helping craft highly convincing and contextually appropriate attack scenarios
+* Essential to maintain detailed documentation of all planned activities and explicit written authorization from appropriate organizational stakeholders
+### Ethical Considerations
+* Must be conducted ethically and professionally
+* Requires proper authorization, protection of sensitive information discovered during testing, and safeguards to prevent harm to the organization or its emplloyees
+* Must be ready to reveal identity immediatly if any situaltion risk becoming dangerous or harmful
+* Demands special consideration during penetration testing for several reasons:
+  * It involves manipulating human emotions and psychology, which may cause psychological distress if not handled carefully
+  * It involves accessing, or attempting to access, personal information, which raises important privacy and ethical concerns
+  * Unsuccessful or successful social engineering attempts can erode workplace trust and damage professional relationships
+## Mobile Security Testing
+* Mobile security is essential for businesses today
+* Here is why it is so important:
+  * ***BYOD Policies:*** Companies need to secure employee personnel devices that access work resources
+  * ***Data Breach Costs:*** Security failures lead to fines, legal issues, and reputation damage
+  * ***Remote Work Revolution:*** More people working remotely means more mobile devices connecting to company networks
+  * ***Compliance Requirements:*** Laws require strict data protection and privacy measures
+  * ***Advanced Threats:*** Mobile devices face attacks from malware, phishing, and new security exploits
+* Companies need strong mobile security plans to stay safe while keeping work efficient
+  * This means:
+    * Using mobile device management tools
+    * Creating security rules (such as disabling Bluetooth when its not in use)
+    * Checking mobile apps and systems for problems
+* Mobile applications often store sensitive data locally, communicate with multiple backend services, and interact with various components
+  * Creates unique security challenges and potential entry points for attackers
+* Key areas of concern include:
+  * Local data storage
+  * Network communication
+  * Inter-process communication (IPC)
+  * Platform-specific security mechanisms
+* Understanding these components is essential for effective mobile mobile security testing
+#### Setting Up Your Testing Environment
+* For Android testing, want to have access to both rooted and non-rooted devices
+* For iOS, having both jailbroken and non-jailbroken devices is beneficial, though not always necessary
+* Essential tools for testing environment include:
+  * Mobile device management tools like Android Debug Bridge (ADB) for Android
+  * Reverse engineering tools such as JADX and Ghidra
+  * Network analysis tools like Burp Suite Mobile Assistant
+  * Platform-specific debugging tools
+  * Mobile framework tools like Frida and Objection
+### Android Security Testing
+* Begins with understanding the application's structure
+* An Android is distributed as an APK file, which contains the application's code, resources, and manifest file
+  * The manifest file is important as it declares the application's permissions, components, and security settings
+* ***Static analysis*** involves decompiling APK and examining the source code for security issues
+  * Can reveal:
+    * Hard coded credentials
+    * Insecure data storage practices
+    * Possible bugs in the application's logic
+  * Tools like JADX can help decompile Android applications into readable Java code
+* ***Dynamic analysis*** consisted of running the application and observing its behavior in real-time
+  * including:
+    *  Monitoring network traffic
+    *  Analyzing file system operations
+    *  Testing the application's runtime behavior
+  * Frida is useful for this, allowing you to hook into application functions and modify behavior
+### iOS Security Testing Specifics
+* iOS applications operate in more restricted environment
+  * Are distributed as IPA file, which are encrypted by default
+  * Testing requires decrypting files first
+* Built around app sandboxing, code signing, and various platform security features
+  * Understanding the mechanisms is crucial for effective testing, and tools such as Objection and Frida can be used to bypass certain security controls during testing
+* When testing iOS applications, pay special attention to:
+  * Keychain usage and data protection
+  * Certificate pinning implementation
+  * Local data storage practices
+  * URL scheme handling
+  * Touch ID/Face ID implementation
+### Common Mobile Vulnerabilities
+
+|Vulnerabilities|Description|
+|:---:|:---|
+|***Insecure data storage***|Sensitive information is stored in plaintext or with weak encryption. This can include authentication tokens, personal information, or business data.|
+|***Weak network security***|Applications might not properly validates SSL/TLS certificates, implement [certificate pinning](https://www.ssl.com/blogs/what-is-certificate-pinning/) incorrectly, or send sensitive data over *insecure channels.|
+|***Client-side injection***|Includes SQL Injection in local databases, JavaScript injection in [WebViews](https://appmaster.io/blog/what-is-a-webview-app), and other injection points specific to mobile platforms.|
+## Reverse Engineering
+* ###### *The process of analyzing and understanding how software, systems, or applications work by examining their components, structure, and functionality*
+* Enables identification of vulnerabilities, understanding of security mechanisms, and development of effective exploration techniques
+* Begins with final product and works backwards to understand its implementation/code
+* To effectively reverse engineer software or mobile applications, a solid foundation in multiple technical areas is essential
+1. A deep understanding of *programming languages* relevant to the target platform is crucial, as it helps in comprihending the decompiled code and program logic.
+   * Knowledge of assembly language and computer architecture is fundamental, many reverse engineering tasks involve analyzing low-level code
+2. *Operating system internals*, including memory management, process handling, and system calls, are vital for understanding how the application interacts with the system
+3. For mobile applications specifically, familiarity with platform-specified *architectures*, their security models, and common protection mechanisms like code signing and encryption is necessary
+4. Understanding common *software design* patterns, data structures, and algorithms helps in recognizing implemented functionality when decompiled code
+5. Knowledge of *networking protocols* and API communication is also valuable, especially for applications that interact with remote servers
+### Fundamentals of Reverse Engineering
+* At its core, reverse engineering demands a comprehensive understanding of computer architecture, assembly language, and the intricate mechanisms by which programs execute at the *machine level*
+* Critical to understand:
+  * ***Memory layout:*** Encompasses various crucial components including stack, heap, and different segments of a program
+  * ***Stack:*** Plays vital role in program execution as it handles the management of *function calls* and local variables
+  * ***Heap:*** Take responsibility for dynamic *memory allocation*, which allows programs to request and utilize memory resources as needed during runtime
+* Need to become proficient with several tools
+  * *Disasssemblers* like IDS Pro, Ghridra, or Radare2 are fundamental
+  * *Debuggers* such as GDB, WinDbg, or x64dbg are equally important, allowing you to examine program execution in real-time, set breakpoints,  and analyze memory contents
+* *Decompilers* attempt to reconstruct high-level source code from compiled binaries
+  * Can significantly speed up analysis process by providing a more intuitive view of the program's logic
+### Static vs. Dynamic Analysis
+
+|Static Analysis|Dynamic Analysis|
+|:---:|:---:|
+|*Examining the program without executing it*|*Running the program and observing its behavior in real-time*|
+|Studying the programs structure|Monitoring memory usage|
+|Identifying function and variables|Tracking function calls|
+|Understanding the overall flow of the application|Analyzing program flow during execution|
+|Getting broad overview of the program and identifying potential areas of interest|Useful for understanding complex algorithms, anti-debugging techniques, and encryption implementations|
+### Common Reverse Engineering Scenarios
+
+|Scenario|Description|
+|:---:|:--|
+|***Protocol analysis***|Many applications use custom protocols for communication, and understanding these protocols through reverse engineering can reveal security flaws or enable the development of custom tools for testing|
+|***Anti-reverse engineering techniques***|Things like code obfuscation, packed executables, and anti-debugging measures are common in modern software. Understanding these protection mechanisms and how to bypass them becomes crucial.|
 # Daily Life
 ## Utilizing Penetration Testing Results
 ## Daily Routine of a Penetration Tester
